@@ -1,5 +1,29 @@
 @font-face {
   font-family: 'TT Commons Pro';
+  src: url('./TT Commons Pro-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Commons Pro';
+  src: url('./TT Commons Pro-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Commons Pro';
+  src: url('./TT Commons Pro-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Commons Pro';
   src: url('./TT Commons Pro-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
@@ -16,16 +40,16 @@
 
 @font-face {
   font-family: 'TT Commons Pro';
-  src: url('./TT Commons Pro-Bold.otf') format('opentype');
-  font-weight: 700;
+  src: url('./TT Commons Pro-DemiBold.otf') format('opentype');
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'TT Commons Pro';
-  src: url('./TT Commons Pro-Light.otf') format('opentype');
-  font-weight: 300;
+  src: url('./TT Commons Pro-Bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 } 
