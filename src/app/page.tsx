@@ -79,7 +79,7 @@ export default function Home() {
 
         {/* Arts Section */}
         <div className="w-full">
-          <div className="max-w-6xl mx-auto pt-40 pb-20">
+          <div className="max-w-6xl mx-auto pt-60 pb-30">
             <h2 className="text-4xl font-semibold mb-6">The Beauty of the World, So Heavy</h2>
             <p className="text-xl max-w-5xl mb-8 font-extralight">
               To be human is to dwell in constant relation — with others, with oneself, with the world's vast and murmuring presence. Art becomes our vessel in this endless crossing, and through it, we are granted glimpses of beauty: fleeting, radiant, and sometimes aching — but always true.
@@ -97,6 +97,34 @@ export default function Home() {
               >
                 Photos
               </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="w-full bg-[#E6FFD9]">
+          <div className="max-w-6xl mx-auto pt-60 pb-30">
+            <div className="flex justify-between items-start">
+              {/* Left Side: Shall we? */}
+              <h2 className="text-[240px] font-bold leading-tight max-w-xl">Shall we?</h2>
+              {/* Right Side: Contact */}
+              <div className="max-w-xl">
+                <p className="text-xl mb-8 font-extralight">
+                  I work with data science teams to develop analytics solutions that deliver actionable insights and drive business growth at scale. <br /> Want to work together?                  
+                </p>
+                <div className="flex flex-col gap-8">
+                  <button 
+                    onClick={() => window.location.href = 'mailto:xueshankpeng@gmail.com'}
+                    className="inline-block bg-[#2D2D2D] text-white px-7 py-3 rounded-full text-xl hover:bg-black transition-colors w-fit"
+                  >
+                    Email me
+                  </button>
+                  <div className="flex gap-8">
+                    <a href="https://www.linkedin.com/in/xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-gray-600 transition-colors">LinkedIn</a>
+                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-gray-600 transition-colors">Medium</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
