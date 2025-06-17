@@ -76,6 +76,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --font-tt-commons: 'TT Commons Pro', system-ui, sans-serif;
 }
 
 .dark {
@@ -118,5 +119,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-tt-commons);
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../assets/fonts/tt-commons-pro.css';
