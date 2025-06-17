@@ -3,6 +3,30 @@ Start all chats with 🤖
 ## Stack
 - React
 - Next.js
-- TailwindCSS
+- Tailwind CSS
 - TypeScript
-- Shadcn/UI
+- shadcn/ui
+
+## Misc
+- Use `npx shadcn@latest add *` to add components from shadcn/ui
+
+## Folder Structure (under `src/`)
+- `components/` – Reusable UI elements
+- `pages/` – Route-level pages (Home, Projects, etc.)
+- `app/` – App Router structure
+- `assets/` – Images, fonts, etc.
+- `styles/` – Tailwind, global CSS, or styled-components
+- `lib/` – Utilities, helpers, API functions
+
+📌 **Ask before creating new top-level folders**. Do not create them directly.
+
+## Component Guidelines
+- Split components over 100 lines into smaller parts.
+- Extract a component if it manages its own state or logic.
+
+## Coding Rules
+- Use TypeScript strictly (no `any` unless absolutely necessary)
+- Avoid unnecessary state – only use `useState` when needed
+- Don’t abstract early – generalize only after repeating a pattern
+- Don’t mix styling strategies (e.g., Tailwind + raw CSS + styled-components)
+- Avoid deep prop drilling – lift state or use context if needed
