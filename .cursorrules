@@ -20,6 +20,18 @@ Start all chats with 🤖
 
 📌 **Ask before creating new top-level folders**. Do not create them directly.
 
+## Site Structure
+This is a personal website with the following subpages:
+- Home (main landing)
+- About
+- Projects
+- Music Performances
+- Photo Gallery
+
+We might add more later, but this is the structure for now.
+
+👉 Set up routing for all pages, but **only focus on building the Home page** for now. Other pages should remain blank placeholders until later.
+
 ## Component Guidelines
 - Split components over 100 lines into smaller parts.
 - Extract a component if it manages its own state or logic.
