@@ -102,26 +102,26 @@ export default function Home() {
         </div>
 
         {/* Contact Section */}
-        <div className="w-full bg-[#E6FFD9]">
-          <div className="max-w-6xl mx-auto pt-60 pb-30">
+        <div className="w-full bg-[#183c34]">
+          <div className="max-w-6xl mx-auto pt-25 pb-30">
             <div className="flex justify-between items-start">
               {/* Left Side: Shall we? */}
-              <h2 className="text-[240px] font-bold leading-tight max-w-xl">Shall we?</h2>
+              <h2 className="text-[240px] font-bold leading-[0.8] max-w-xl text-[#eaec90]">Shall we?</h2>
               {/* Right Side: Contact */}
               <div className="max-w-xl">
-                <p className="text-xl mb-8 font-extralight">
+                <p className="text-2xl mb-8 font-extralight text-[#eaec90]">
                   I work with data science teams to develop analytics solutions that deliver actionable insights and drive business growth at scale. <br /> Want to work together?                  
                 </p>
                 <div className="flex flex-col gap-8">
                   <button 
                     onClick={() => window.location.href = 'mailto:xueshankpeng@gmail.com'}
-                    className="inline-block bg-[#2D2D2D] text-white px-7 py-3 rounded-full text-xl hover:bg-black transition-colors w-fit"
+                    className="inline-block bg-[#eaec90] text-[#183c34] px-7 py-3 rounded-full text-xl hover:bg-black transition-colors w-fit"
                   >
                     Email me
                   </button>
                   <div className="flex gap-8">
-                    <a href="https://www.linkedin.com/in/xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-gray-600 transition-colors">LinkedIn</a>
-                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl hover:text-gray-600 transition-colors">Medium</a>
+                    <a href="https://www.linkedin.com/in/xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-gray-600 transition-colors">LinkedIn</a>
+                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-gray-600 transition-colors">Medium</a>
                   </div>
                 </div>
               </div>
