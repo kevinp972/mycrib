@@ -63,7 +63,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <div className="w-full bg-[#183c34] mt-32">
-          <div className="max-w-6xl mx-auto pt-40 pb-20">
+          <div className="max-w-6xl mx-auto pt-60 pb-30">
             <h2 className="text-4xl font-semibold mb-6 text-[#eaec90]">Creative Analytics to Solve Your Business Problems</h2>
             <p className="text-xl max-w-5xl mb-8 font-extralight text-[#eaec90]">
               With experience in machine learning, causal inference, optimization, customer analytics, and beyond, I specialize in developing creative analytics solutions that tailor to your organization's goals.
@@ -74,6 +74,30 @@ export default function Home() {
             >
               My Projects
             </button>
+          </div>
+        </div>
+
+        {/* Arts Section */}
+        <div className="w-full">
+          <div className="max-w-6xl mx-auto pt-40 pb-20">
+            <h2 className="text-4xl font-semibold mb-6">The Beauty of the World, So Heavy</h2>
+            <p className="text-xl max-w-5xl mb-8 font-extralight">
+              To be human is to dwell in constant relation — with others, with oneself, with the world's vast and murmuring presence. Art becomes our vessel in this endless crossing, and through it, we are granted glimpses of beauty: fleeting, radiant, and sometimes aching — but always true.
+            </p>
+            <div className="flex gap-4">
+              <button 
+                onClick={() => handleNavigation('/music')}
+                className="inline-block border border-[#2D2D2D] text-[#2D2D2D]  px-7 py-3 rounded-full text-xl hover:bg-black transition-colors"
+              >
+                Music
+              </button>
+              <button 
+                onClick={() => handleNavigation('/gallery')}
+                className="inline-block bg-[#2D2D2D] text-white px-7 py-3 rounded-full text-xl hover:bg-black transition-colors"
+              >
+                Photos
+              </button>
+            </div>
           </div>
         </div>
       </div>
