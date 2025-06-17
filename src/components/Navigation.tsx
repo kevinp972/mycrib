@@ -11,7 +11,9 @@ export default function Navigation() {
     <nav className="w-full bg-[#f8f4ec] px-8 py-30">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
-            <span className="text-2xl font-semibold text-[#183c34]">XUESHAN PENG</span>
+            <Link href="/" className="text-2xl font-semibold text-[#183c34] hover:text-[#eaec90] transition-colors">
+              XUESHAN PENG
+            </Link>
             <div className="h-20 w-[1px] bg-black"></div>
           <LanguageSelector />
         </div>
