@@ -123,8 +123,18 @@ export default function Home() {
                   </button>
                   <div className="flex gap-8">
                     <a href="https://www.linkedin.com/in/pengxs972/" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">LinkedIn</a>
-                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">Medium</a>
-                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">Medium</a>
+                    <button 
+                      onClick={() => handleNavigation('/projects')}
+                      className="text-xl text-[#eaec90] hover:text-[background] transition-colors"
+                    >
+                      Projects
+                    </button>
+                    <button 
+                      onClick={() => handleNavigation('/about')}
+                      className="text-xl text-[#eaec90] hover:text-[background] transition-colors"
+                    >
+                      About Me
+                    </button>
                   </div>
                 </div>
               </div>
