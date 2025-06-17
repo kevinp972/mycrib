@@ -31,7 +31,7 @@ export default function Footer() {
                 Email me
               </button>
               <div className="flex gap-8">
-                <a href="https://www.linkedin.com/in/pengxs972/" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/kevinp972/" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">LinkedIn</a>
                 <button 
                   onClick={() => handleNavigation('/projects')}
                   className="text-xl text-[#eaec90] hover:text-[background] transition-colors"
