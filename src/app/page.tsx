@@ -5,7 +5,7 @@ import profilePic from '@/assets/images/kevin-profile.jpg';
 export default function Home() {
   return (
     <div className="min-h-screen bg-background px-8">
-      <div className="max-w-6xl mx-auto pt-70">
+      <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-start">
           <div className="max-w-2xl">
             <p className="text-xl mb-12">

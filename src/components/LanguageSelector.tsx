@@ -24,7 +24,7 @@ export function LanguageSelector() {
           English
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer focus:bg-[#bef299] text-xl">
-          中文
+          中文 - Coming Soon
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -31,7 +31,7 @@ export default function RootLayout({
         data-gr-ext-installed=""
       >
         <Navigation />
-        <main className="pt-14">
+        <main>
           {children}
         </main>
       </body>
