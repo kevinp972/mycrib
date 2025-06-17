@@ -104,13 +104,13 @@ export default function Home() {
 
         {/* Contact Section */}
         <div className="w-full bg-[#183c34]">
-          <div className="max-w-6xl mx-auto pt-25 pb-30">
+          <div className="max-w-6xl mx-auto pt-25 pb-20">
             <div className="flex justify-between items-start">
               {/* Left Side: Shall we? */}
               <h2 className="text-[200px] font-bold leading-[0.8] max-w-xl text-[#eaec90]">Shall we?</h2>
               {/* Right Side: Contact */}
               <div className="max-w-xl">
-                <p className="text-xl mb-8 font-extralight text-[#eaec90]">
+                <p className="text-2xl mb-8 font-extralight text-[#eaec90]">
                   I work with data science teams to develop analytics solutions that deliver actionable insights and drive business growth at scale. <br /> Want to work together?                  
                 </p>
                 <div className="flex flex-col gap-12">
