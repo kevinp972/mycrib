@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kevin's Personal Website",
-  description: "Personal website of Xueshan (Kevin) Peng",
+  title: "Kevin Peng",
+  description: "Personal website of Kevin Peng",
 };
 
 export default function RootLayout({

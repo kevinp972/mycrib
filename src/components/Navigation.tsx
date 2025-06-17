@@ -2,36 +2,45 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { LanguageSelector } from './LanguageSelector';
 
 export default function Navigation() {
   const pathname = usePathname();
 
-  const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/music', label: 'Music' },
-    { href: '/gallery', label: 'Gallery' },
-  ];
-
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="flex flex-1 items-center justify-center space-x-6">
-          {links.map(({ href, label }) => {
-            const isActive = pathname === href;
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={`text-sm transition-colors hover:text-foreground/80 ${
-                  isActive ? 'text-foreground font-semibold' : 'text-foreground/60'
-                }`}
-              >
-                {label}
-              </Link>
-            );
-          })}
+    <nav className="fixed top-0 w-full bg-white z-50 px-8 py-4">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        <div className="flex items-center gap-4">
+          <span className="text-lg">Kevin Peng</span>
+          <span className="text-gray-300">|</span>
+          <LanguageSelector />
+        </div>
+        
+        <div className="flex items-center space-x-8">
+          <Link
+            href="/about"
+            className={`text-base ${pathname === '/about' ? 'text-black' : 'text-gray-600'}`}
+          >
+            About
+          </Link>
+          <Link
+            href="/projects"
+            className={`text-base ${pathname === '/projects' ? 'text-black' : 'text-gray-600'}`}
+          >
+            Projects
+          </Link>
+          <Link
+            href="/music"
+            className={`text-base ${pathname === '/music' ? 'text-black' : 'text-gray-600'}`}
+          >
+            Music
+          </Link>
+          <Link
+            href="/gallery"
+            className={`text-base ${pathname === '/gallery' ? 'text-black' : 'text-gray-600'}`}
+          >
+            Gallery
+          </Link>
         </div>
       </div>
     </nav>
