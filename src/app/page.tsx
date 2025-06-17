@@ -1,28 +1,29 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import profilePic from '@/assets/images/kevin-profile.jpg';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FFF5F5] px-8">
+    <div className="min-h-screen bg-[#f8f4ec] px-8">
       <div className="max-w-6xl mx-auto pt-32">
         <div className="flex justify-between items-start">
           <div className="max-w-2xl">
             <h1 className="text-7xl font-normal mb-8">
-              Software Engineer & Musician
+              Analytics & Data Science
             </h1>
             
             <p className="text-xl mb-12">
-              Hi, I'm Kevin Peng. I'm a software engineer specializing in full-stack development and a passionate musician.
+              Hi, I'm Xueshan (Kevin) Peng — a data scientist graduating in December 2025, seeking full-time roles starting in January 2026.
             </p>
 
             <div className="grid grid-cols-2 gap-8 mb-12">
               <div>
                 <h2 className="text-xl mb-2">Currently</h2>
-                <p className="text-lg">Software Engineer</p>
+                <p className="text-lg">UCLA MSBA Candidate <br /> DS@JBREC</p>
               </div>
               <div>
                 <h2 className="text-xl mb-2">Location</h2>
-                <p className="text-lg">Singapore</p>
+                <p className="text-lg">Los Angeles, CA</p>
               </div>
             </div>
 
@@ -35,17 +36,13 @@ export default function Home() {
           </div>
 
           <div className="relative w-[400px] h-[500px] rounded-[40px] overflow-hidden">
-            {/* Once you add kevin-profile.jpg to src/assets/images/, uncomment this and remove the placeholder div below */}
-            {/* <Image
-              src="/assets/images/kevin-profile.jpg"
+            <Image
+              src={profilePic}
               alt="Kevin Peng"
               fill
               className="object-cover"
               priority
-            /> */}
-            <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-              Please add kevin-profile.jpg to src/assets/images/
-            </div>
+            />
           </div>
         </div>
       </div>

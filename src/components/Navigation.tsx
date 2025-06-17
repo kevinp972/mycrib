@@ -8,7 +8,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 w-full bg-white z-50 px-8 py-4">
+    <nav className="fixed top-0 w-full bg-[#f8f4ec] z-50 px-8 py-4">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <span className="text-lg">Kevin Peng</span>
