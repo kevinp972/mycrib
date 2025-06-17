@@ -1,8 +1,18 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import profilePic from '@/assets/images/kevin-profile.jpg';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <div className="min-h-screen bg-background">
@@ -31,12 +41,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <Link 
-                href="/about"
+              <button 
+                onClick={() => handleNavigation('/about')}
                 className="inline-block bg-[#2D2D2D] text-white px-7 py-3 rounded-full text-xl hover:bg-black transition-colors"
               >
                 About me
-              </Link>
+              </button>
             </div>
 
             <div className="relative w-[400px] h-[400px] overflow-hidden">
@@ -58,12 +68,12 @@ export default function Home() {
             <p className="text-xl max-w-5xl mb-8 font-extralight text-[#eaec90]">
               With experience in machine learning, causal inference, optimization, customer analytics, and beyond, I specialize in developing creative analytics solutions that tailor to your organization's goals.
             </p>
-            <Link 
-              href="/projects"
+            <button 
+              onClick={() => handleNavigation('/projects')}
               className="inline-block bg-[#eaec90] text-[#183c34] px-7 py-3 rounded-full text-xl hover:bg-[background] transition-colors"
             >
               My Projects
-            </Link>
+            </button>
           </div>
         </div>
       </div>
