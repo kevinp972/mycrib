@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { Send } from 'lucide-react';
 import profilePic from '@/assets/images/kevin-profile.jpg';
 
 export default function Home() {
@@ -87,7 +88,7 @@ export default function Home() {
             <div className="flex gap-4">
               <button 
                 onClick={() => handleNavigation('/music')}
-                className="inline-block border border-[#2D2D2D] text-[#2D2D2D]  px-7 py-3 rounded-full text-xl hover:bg-black transition-colors"
+                className="inline-block border border-[#2D2D2D] text-[#2D2D2D]  px-7 py-3 rounded-full text-xl hover:bg-[#2D2D2D] hover:text-white transition-colors"
               >
                 Music
               </button>
@@ -106,22 +107,24 @@ export default function Home() {
           <div className="max-w-6xl mx-auto pt-25 pb-30">
             <div className="flex justify-between items-start">
               {/* Left Side: Shall we? */}
-              <h2 className="text-[240px] font-bold leading-[0.8] max-w-xl text-[#eaec90]">Shall we?</h2>
+              <h2 className="text-[200px] font-bold leading-[0.8] max-w-xl text-[#eaec90]">Shall we?</h2>
               {/* Right Side: Contact */}
               <div className="max-w-xl">
-                <p className="text-2xl mb-8 font-extralight text-[#eaec90]">
+                <p className="text-xl mb-8 font-extralight text-[#eaec90]">
                   I work with data science teams to develop analytics solutions that deliver actionable insights and drive business growth at scale. <br /> Want to work together?                  
                 </p>
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-12">
                   <button 
-                    onClick={() => window.location.href = 'mailto:xueshankpeng@gmail.com'}
-                    className="inline-block bg-[#eaec90] text-[#183c34] px-7 py-3 rounded-full text-xl hover:bg-black transition-colors w-fit"
+                    onClick={() => window.location.href = 'mailto:kevinpeng2025@gmail.com'}
+                    className="inline-flex items-center gap-2 bg-[#eaec90] text-[#183c34] px-10 py-4 rounded-full text-xl hover:bg-[background] transition-colors w-fit"
                   >
+                    <Send className="w-5 h-5 rotate-0" />
                     Email me
                   </button>
                   <div className="flex gap-8">
-                    <a href="https://www.linkedin.com/in/xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-gray-600 transition-colors">LinkedIn</a>
-                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-gray-600 transition-colors">Medium</a>
+                    <a href="https://www.linkedin.com/in/pengxs972/" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">LinkedIn</a>
+                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">Medium</a>
+                    <a href="https://medium.com/@xueshankpeng" target="_blank" rel="noopener noreferrer" className="text-xl text-[#eaec90] hover:text-[background] transition-colors">Medium</a>
                   </div>
                 </div>
               </div>
