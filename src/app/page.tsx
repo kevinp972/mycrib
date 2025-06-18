@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-background px-4 sm:px-8 pb-32">
+      <div className="bg-background px-8 pb-32">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-start gap-8">
             <div className="max-w-2xl">
@@ -25,8 +25,8 @@ export default function Home() {
                 Hi, I&apos;m Xueshan (Kevin) Peng — a data scientist graduating in December 2025, seeking full-time roles starting in January 2026.
               </p>
 
-              <div className="grid grid-cols-2 gap-8 mb-12 pt-10">
-                <div>
+              <div className="flex flex-col min-[550px]:flex-row gap-8 mb-12 pt-10">
+                <div className="flex-1">
                   <h2 className="text-2xl font-medium mb-2">Currently</h2>
                   <p className="text-lg font-extralight">
                     <a href="https://www.anderson.ucla.edu/degrees/master-of-science-in-business-analytics-msba" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">UCLA MSBA</a> Candidate 
@@ -36,7 +36,7 @@ export default function Home() {
                     DA Intern @ <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Center for Impact</a>
                   </p>
                 </div>
-                <div>
+                <div className="flex-1">
                   <h2 className="text-2xl font-medium mb-2">Location</h2>
                   <p className="text-lg font-extralight">Los Angeles, CA</p>
                 </div>
@@ -64,7 +64,7 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="bg-[#183c34] px-4 sm:px-8">
+      <div className="bg-[#183c34] px-8">
         <div className="max-w-6xl mx-auto pt-60 pb-30">
           <h2 className="text-4xl font-semibold mb-6 text-[#eaec90]">Creative Analytics to Solve Your Business Problems</h2>
           <p className="text-xl max-w-5xl mb-8 font-extralight text-[#eaec90]">
@@ -80,7 +80,7 @@ export default function Home() {
       </div>
 
       {/* Arts Section */}
-      <div className="bg-background px-4 sm:px-8">
+      <div className="bg-background px-8">
         <div className="max-w-6xl mx-auto pt-60 pb-30">
           <h2 className="text-4xl font-semibold mb-6">The Beauty of the World, So Heavy</h2>
           <p className="text-xl max-w-5xl mb-8 font-extralight">
