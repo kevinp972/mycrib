@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="bg-background px-4 sm:px-8 pb-32">
         <div className="max-w-6xl mx-auto">
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-start gap-8">
             <div className="max-w-2xl">
               <p className="text-xl mb-12">
                 Hi, I&apos;m Xueshan (Kevin) Peng — a data scientist graduating in December 2025, seeking full-time roles starting in January 2026.

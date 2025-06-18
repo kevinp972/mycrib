@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto pt-25 pb-20">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-4">
           {/* Left Side: Shall we? */}
-          <h2 className="text-[100px] md:text-[200px] font-bold leading-[0.8] text-[#eaec90] w-full md:max-w-xl">Shall we?</h2>
+          <h2 className="text-[100px] md:text-[150px] [@media(min-width:955px)]:text-[200px] font-bold leading-[0.8] text-[#eaec90] w-full md:max-w-xl">Shall we?</h2>
           {/* Right Side: Contact */}
           <div className="w-full md:max-w-xl">
             <p className="text-xl md:text-2xl mb-8 font-extralight text-[#eaec90]">
