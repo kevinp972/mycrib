@@ -12,7 +12,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#183c34] mt-auto">
+    <footer className="w-full bg-[#183c34] mt-auto px-4 sm:px-8">
       <div className="max-w-6xl mx-auto pt-25 pb-20">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-4">
           {/* Left Side: Shall we? */}
