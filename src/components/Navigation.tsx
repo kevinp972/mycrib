@@ -18,7 +18,7 @@ export default function Navigation() {
           <LanguageSelector />
         </div>
         
-        <div className="flex items-center justify-center md:justify-start space-x-8 sm:space-x-13">
+        <div className="flex items-center justify-center md:justify-start space-x-13">
           <Link
             href="/about"
             className={`text-xl ${pathname === '/about' ? 'text-black' : 'text-gray-600'}`}
