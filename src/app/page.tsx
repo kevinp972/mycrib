@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
+// import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Send } from 'lucide-react';
+// import { Send } from 'lucide-react';
 import profilePic from '@/assets/images/kevin-profile.jpg';
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
           <div className="flex justify-between items-start">
             <div className="max-w-2xl">
               <p className="text-xl mb-12">
-                Hi, I'm Xueshan (Kevin) Peng — a data scientist graduating in December 2025, seeking full-time roles starting in January 2026.
+                Hi, I&apos;m Xueshan (Kevin) Peng — a data scientist graduating in December 2025, seeking full-time roles starting in January 2026.
               </p>
 
               <div className="grid grid-cols-2 gap-8 mb-12 pt-10">
@@ -67,7 +67,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto pt-60 pb-30">
             <h2 className="text-4xl font-semibold mb-6 text-[#eaec90]">Creative Analytics to Solve Your Business Problems</h2>
             <p className="text-xl max-w-5xl mb-8 font-extralight text-[#eaec90]">
-              With experience in machine learning, causal inference, optimization, customer analytics, and beyond, I specialize in developing elegant analytics solutions that tailor to your organization's goals.
+              With experience in machine learning, causal inference, optimization, customer analytics, and beyond, I specialize in developing elegant analytics solutions that tailor to your organization&apos;s goals.
             </p>
             <button 
               onClick={() => handleNavigation('/projects')}
@@ -83,7 +83,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto pt-60 pb-30">
             <h2 className="text-4xl font-semibold mb-6">The Beauty of the World, So Heavy</h2>
             <p className="text-xl max-w-5xl mb-8 font-extralight">
-              To be human is to dwell in constant relation — with others, with oneself, with the world's vast and murmuring presence. Art becomes our vessel in this endless crossing, and through it, we are granted glimpses of beauty: fleeting, radiant, and sometimes aching — but always true.
+              To be human is to dwell in constant relation — with others, with oneself, with the world&apos;s vast and murmuring presence. Art becomes our vessel in this endless crossing, and through it, we are granted glimpses of beauty: fleeting, radiant, and sometimes aching — but always true.
             </p>
             <div className="flex gap-4">
               <button 
