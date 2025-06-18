@@ -50,7 +50,7 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="relative w-[400px] h-[400px] overflow-hidden">
+            <div className="relative w-[400px] h-[400px] overflow-hidden hidden md:block">
               <Image
                 src={profilePic}
                 alt="Kevin Peng"
