@@ -1,18 +1,20 @@
+import lyftImage from '@/assets/images/projects/lyft.png';
+
 export interface Project {
   title: string;
   categories: string[];
-  image: string;
+  image: any; // We'll use any here since it's a StaticImageData type from Next.js
   link: string;
   backgroundColor: string;
 }
 
 export const projects: readonly Project[] = [
   {
-    title: "Edenspiekermann",
-    categories: ["Product Design", "Agency"],
-    image: "/assets/images/projects/placeholder.svg",
-    link: "https://example.com",
-    backgroundColor: "bg-black"
+    title: "Driver Incentive Program Evaluation",
+    categories: ["Causal Inference", "A/B Testing", "Platform Strategy"],
+    image: lyftImage,
+    link: "https://github.com/kevinp972/rideshare-app-experiment",
+    backgroundColor: "bg-[#fed5e5]"
   },
   {
     title: "Unique Board",

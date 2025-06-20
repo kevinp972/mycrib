@@ -5,13 +5,14 @@ import { projects } from '@/lib/projectsData';
 export default function ProjectsPage() {
   return (
     <main className="container mx-auto px-8 pb-40">
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-40">
-        {projects.map((project) => (
-          <div key={project.title}>
-            <ProjectCard {...project} />
-          </div>
-        ))}
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-40">
+          {projects.map((project) => (
+            <div key={project.title}>
+              <ProjectCard {...project} />
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );
