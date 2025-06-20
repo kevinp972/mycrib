@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { type Project } from '@/lib/projectsData';
 
-export default function ProjectCard({ title, categories, image, link, backgroundColor }: Project) {
+export default function ProjectCard({ title, categories, image, link, backgroundColor, zoom = 1 }: Project) {
   return (
     <a 
       href={link} 
@@ -20,12 +20,12 @@ export default function ProjectCard({ title, categories, image, link, background
           />
           
           {/* Image container - transforms on hover */}
-          <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
-            <div className="relative w-full h-full">
+          <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105 object-cover">
+            <div className="relative w-full h-full" style={{ transform: `scale(${zoom})` }}>
               <Image
                 src={image}
                 alt={title}
-                className="object-cover"
+                className="object-contain"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority

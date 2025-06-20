@@ -11,6 +11,7 @@ export interface Project {
   image: any; // We'll use any here since it's a StaticImageData type from Next.js
   link: string;
   backgroundColor: string;
+  zoom?: number; // Optional zoom level, defaults to 1 if not specified
 }
 
 export const projects: readonly Project[] = [
@@ -19,36 +20,40 @@ export const projects: readonly Project[] = [
     categories: ["Causal Inference", "A/B Testing", "Platform Strategy"],
     image: lyftImage,
     link: "https://github.com/kevinp972/rideshare-app-experiment",
-    backgroundColor: "bg-[#fed5e5]"
+    backgroundColor: "bg-[#fed5e5]",
+    zoom: 0.9 // Default zoom level
   },
   {
     title: "Automated ETL for Yelp Analytics",
     categories: ["End-to-End Pipeline", "Data Engineering"],
     image: etlImage,
     link: "https://github.com/kevinp972/yelp-etl-pipeline-to-tableau",
-    backgroundColor: "bg-[#9B9B9B]"
+    backgroundColor: "bg-[#9B9B9B]",
+    zoom: 1 // Slightly zoomed out
   },
   {
     title: "Optimizing Credit Score Cutoffs with RDD",
     categories: ["Causal Inference", "Behavioral Modeling", "Data-Driven Policy Design"],
     image: creditImage,
     link: "https://github.com/kevinp972/rdd-credit-limit",
-    backgroundColor: "bg-[black]"
+    backgroundColor: "bg-[black]",
+    zoom: 1.1 // More zoomed out
   },
   {
     title: "Modeling Wealth with the 1991 SIPP Dataset",
     categories: ["LASSO/Ridge", "Predictive Analytics", "Flexible Linear Models"],
     image: sippImage,
     link: "https://github.com/kevinp972/SIPP_Data_Value_Prediction",
-    backgroundColor: "bg-[#BFE8D7]"
+    backgroundColor: "bg-[#BFE8D7]",
+    zoom: 1
   },
-  // Adding 4 more placeholder projects to reach 8 total
   {
     title: "British Airways Performance Tracker",
     categories: ["Tableau Dashboard", "Customer Experience Analytics"],
     image: airplaneImage,
     link: "https://public.tableau.com/views/BritishAirwaysDashboard_17504012958430/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-    backgroundColor: "bg-[#C0C2EC]"
+    backgroundColor: "bg-[#C0C2EC]",
+    zoom: 0.7
   },
   {
     title: "Project Six",
