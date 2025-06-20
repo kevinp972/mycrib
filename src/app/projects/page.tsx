@@ -1,7 +1,18 @@
+import React from 'react';
+import ProjectCard from '@/components/ProjectCard';
+import { projects } from '@/lib/projectsData';
+
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-2xl font-semibold">Projects Page - Coming Soon</h1>
-    </div>
+    <main className="container mx-auto px-8 pb-40">
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 gap-y-40">
+        {projects.map((project) => (
+          <div key={project.title}>
+            <ProjectCard {...project} />
+          </div>
+        ))}
+      </div>
+    </main>
   );
 } 
