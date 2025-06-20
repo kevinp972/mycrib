@@ -7,7 +7,7 @@ export default function MusicCard({ title, composer, image, link, isFeature = fa
   return (
     <a 
       href={link} 
-      className={`block relative group ${isFeature ? 'col-span-2' : ''}`}
+      className={`block relative group ${isFeature ? 'min-[600px]:col-span-2' : ''}`}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -20,7 +20,7 @@ export default function MusicCard({ title, composer, image, link, isFeature = fa
             alt={title}
             className="object-cover"
             fill
-            sizes={isFeature ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+            sizes={isFeature ? "(max-width: 600px) 100vw, 100vw" : "(max-width: 600px) 100vw, 50vw"}
             priority
           />
         </div>
