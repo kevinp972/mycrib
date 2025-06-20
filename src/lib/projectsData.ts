@@ -1,4 +1,9 @@
 import lyftImage from '@/assets/images/projects/lyft.png';
+import etlImage from '@/assets/images/projects/etl-code-snippet.png';
+import creditImage from '@/assets/images/projects/credit-cards.png';
+import placeholderImage from '@/assets/images/projects/placeholder.svg';
+import sippImage from '@/assets/images/projects/wealthgap.png';
+import airplaneImage from '@/assets/images/projects/britsair.png';
 
 export interface Project {
   title: string;
@@ -17,52 +22,52 @@ export const projects: readonly Project[] = [
     backgroundColor: "bg-[#fed5e5]"
   },
   {
-    title: "Unique Board",
-    categories: ["Product Design", "Startups"],
-    image: "/assets/images/projects/placeholder.svg",
-    link: "https://example.com",
-    backgroundColor: "bg-black"
+    title: "Automated ETL for Yelp Analytics",
+    categories: ["End-to-End Pipeline", "Data Engineering"],
+    image: etlImage,
+    link: "https://github.com/kevinp972/yelp-etl-pipeline-to-tableau",
+    backgroundColor: "bg-[#9B9B9B]"
   },
   {
-    title: "General Assembly",
-    categories: ["User Research", "Strategy"],
-    image: "/assets/images/projects/placeholder.svg",
-    link: "https://example.com",
-    backgroundColor: "bg-black"
+    title: "Optimizing Credit Score Cutoffs with RDD",
+    categories: ["Causal Inference", "Behavioral Modeling", "Data-Driven Policy Design"],
+    image: creditImage,
+    link: "https://github.com/kevinp972/rdd-credit-limit",
+    backgroundColor: "bg-[black]"
   },
   {
-    title: "SQL Challenges",
-    categories: ["Product Design", "UI Animation"],
-    image: "/assets/images/projects/placeholder.svg",
-    link: "https://example.com",
-    backgroundColor: "bg-black"
+    title: "Modeling Wealth with the 1991 SIPP Dataset",
+    categories: ["LASSO/Ridge", "Predictive Analytics", "Flexible Linear Models"],
+    image: sippImage,
+    link: "https://github.com/kevinp972/SIPP_Data_Value_Prediction",
+    backgroundColor: "bg-[#BFE8D7]"
   },
   // Adding 4 more placeholder projects to reach 8 total
   {
-    title: "Project Five",
-    categories: ["Design", "Development"],
-    image: "/assets/images/projects/placeholder.svg",
-    link: "https://example.com",
-    backgroundColor: "bg-black"
+    title: "British Airways Performance Tracker",
+    categories: ["Tableau Dashboard", "Customer Experience Analytics"],
+    image: airplaneImage,
+    link: "https://public.tableau.com/views/BritishAirwaysDashboard_17504012958430/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+    backgroundColor: "bg-[#C0C2EC]"
   },
   {
     title: "Project Six",
     categories: ["UI/UX", "Research"],
-    image: "/assets/images/projects/placeholder.svg",
+    image: placeholderImage,
     link: "https://example.com",
     backgroundColor: "bg-black"
   },
   {
     title: "Project Seven",
     categories: ["Product", "Strategy"],
-    image: "/assets/images/projects/placeholder.svg",
+    image: placeholderImage,
     link: "https://example.com",
     backgroundColor: "bg-black"
   },
   {
     title: "Project Eight",
     categories: ["Design", "Development"],
-    image: "/assets/images/projects/placeholder.svg",
+    image: placeholderImage,
     link: "https://example.com",
     backgroundColor: "bg-black"
   }
