@@ -4,6 +4,9 @@ import creditImage from '@/assets/images/projects/credit-cards.png';
 import placeholderImage from '@/assets/images/projects/placeholder.svg';
 import sippImage from '@/assets/images/projects/wealthgap.png';
 import airplaneImage from '@/assets/images/projects/britsair.png';
+import ofgImage from '@/assets/images/projects/ofg.png';
+import mycribImage from '@/assets/images/projects/mycrib.png';
+import clutchImage from '@/assets/images/projects/clutch.png';
 
 export interface Project {
   title: string;
@@ -21,7 +24,7 @@ export const projects: readonly Project[] = [
     image: lyftImage,
     link: "https://github.com/kevinp972/rideshare-app-experiment",
     backgroundColor: "bg-[#fed5e5]",
-    zoom: 0.9 // Default zoom level
+    zoom: 0.9 
   },
   {
     title: "Automated ETL for Yelp Analytics",
@@ -29,7 +32,7 @@ export const projects: readonly Project[] = [
     image: etlImage,
     link: "https://github.com/kevinp972/yelp-etl-pipeline-to-tableau",
     backgroundColor: "bg-[#9B9B9B]",
-    zoom: 1 // Slightly zoomed out
+    zoom: 1 
   },
   {
     title: "Optimizing Credit Score Cutoffs with RDD",
@@ -37,7 +40,7 @@ export const projects: readonly Project[] = [
     image: creditImage,
     link: "https://github.com/kevinp972/rdd-credit-limit",
     backgroundColor: "bg-[black]",
-    zoom: 1.1 // More zoomed out
+    zoom: 1.1 
   },
   {
     title: "Modeling Wealth with the 1991 SIPP Dataset",
@@ -56,24 +59,26 @@ export const projects: readonly Project[] = [
     zoom: 0.7
   },
   {
-    title: "Project Six",
-    categories: ["UI/UX", "Research"],
-    image: placeholderImage,
-    link: "https://example.com",
-    backgroundColor: "bg-black"
+    title: "My Work at Center for Impact",
+    categories: ["Data Analytics & Visualization", "Python, Dash, Tableau"],
+    image: ofgImage,
+    link: "https://www.anderson.ucla.edu/about/centers/impactanderson/corporate-sustainability/about-open-for-good",
+    backgroundColor: "bg-[#2D2D2D]",
+    zoom: 0.7
   },
   {
-    title: "Project Seven",
-    categories: ["Product", "Strategy"],
-    image: placeholderImage,
-    link: "https://example.com",
-    backgroundColor: "bg-black"
+    title: "Source Code for This Website",
+    categories: ["Front-End Developing", "Responsive Design"],
+    image: mycribImage,
+    link: "https://github.com/kevinp972/mycrib",
+    backgroundColor: "bg-[#9B9B9B]"
   },
   {
-    title: "Project Eight",
-    categories: ["Design", "Development"],
-    image: placeholderImage,
+    title: "Clutch Replacement on My Friend's Mustang GT 2017",
+    categories: ["Mechanic Work", "Fun Time with Bro"],
+    image: clutchImage,
     link: "https://example.com",
-    backgroundColor: "bg-black"
+    backgroundColor: "bg-[#ECEAC0]",
+    zoom: 0.7
   }
 ] as const; 
