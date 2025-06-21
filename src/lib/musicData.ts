@@ -4,7 +4,7 @@ import laLaLandImage from '@/assets/images/music/lalaland.jpg';
 import tchaikovskyImage from '@/assets/images/music/tchaikovsky.png';
 import debussyImage from '@/assets/images/music/debussy.jpg';
 import cinemaParadisoImage from '@/assets/images/music/cinemaparadiso.jpg';
-import playingLoveImage from '@/assets/images/music/1900.png';
+import playingLoveImage from '@/assets/images/music/1900.PNG';
 import secretImage from '@/assets/images/music/secret.jpg';
 import bachImage from '@/assets/images/music/bach.jpg';
 import attaliImage from '@/assets/images/music/attali.jpg';
