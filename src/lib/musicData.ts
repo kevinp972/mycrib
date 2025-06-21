@@ -1,4 +1,5 @@
-import placeholderImage from '@/assets/images/projects/placeholder.svg';
+
+import { StaticImageData } from 'next/image';
 import isisImage from '@/assets/images/music/Isis.jpg';
 import laLaLandImage from '@/assets/images/music/lalaland.jpg';
 import tchaikovskyImage from '@/assets/images/music/tchaikovsky.png';
@@ -10,12 +11,14 @@ import bachImage from '@/assets/images/music/bach.jpg';
 import attaliImage from '@/assets/images/music/attali.jpg';
 
 
+
 export interface MusicPerformance {
     title: string;
     composer: string;
-    image: any;
+    image: StaticImageData;
     link: string;
     isFeature?: boolean;
+    isPDF?: boolean;
   }
 
 export const musicPerformances: MusicPerformance[] = [

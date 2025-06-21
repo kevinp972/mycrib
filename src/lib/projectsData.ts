@@ -1,7 +1,8 @@
+import { StaticImageData } from 'next/image';
 import lyftImage from '@/assets/images/projects/lyft.png';
 import etlImage from '@/assets/images/projects/etl-code-snippet.png';
 import creditImage from '@/assets/images/projects/credit-cards.png';
-import placeholderImage from '@/assets/images/projects/placeholder.svg';
+
 import sippImage from '@/assets/images/projects/wealthgap.png';
 import airplaneImage from '@/assets/images/projects/britsair.png';
 import ofgImage from '@/assets/images/projects/ofg.png';
@@ -11,7 +12,7 @@ import clutchImage from '@/assets/images/projects/clutch.png';
 export interface Project {
   title: string;
   categories: string[];
-  image: any; // We'll use any here since it's a StaticImageData type from Next.js
+  image: StaticImageData;
   link: string;
   backgroundColor: string;
   zoom?: number; // Optional zoom level, defaults to 1 if not specified
