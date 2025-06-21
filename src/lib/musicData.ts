@@ -66,12 +66,12 @@ export const musicPerformances: MusicPerformance[] = [
     title: "Harmonic Analysis of Bach's Praeludium XXII",
     composer: "Xueshan (Kevin) Peng",
     image: bachImage,
-    link: "https://example.com/performance8"
+    link: "https://drive.google.com/file/d/1z5Hoew00dmFXlruJYELZLkzWak-vnSoq/view?usp=sharing"
   },
   {
     title: 'Essay on Attali\'s "Noise - The Political Economy of Music"',
     composer: "Xueshan (Kevin) Peng",
     image: attaliImage,
-    link: "https://example.com/performance9"
+    link: "https://drive.google.com/file/d/1We9RoJ0kpVjCFQY7SenoR1RwsDSHjP60/view?usp=sharing"
   }
 ] as const; 
