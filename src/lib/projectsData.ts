@@ -33,7 +33,7 @@ export const projects: readonly Project[] = [
     image: etlImage,
     link: "https://github.com/kevinp972/yelp-etl-pipeline-to-tableau",
     backgroundColor: "bg-[#9B9B9B]",
-    zoom: 1 
+    zoom: 0.9 
   },
   {
     title: "Optimizing Credit Score Cutoffs with RDD",
