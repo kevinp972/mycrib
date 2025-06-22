@@ -28,7 +28,7 @@ export default function AboutPage() {
               
               <p>I&apos;m currently working on building contemporaneous models of housing market dynamics at <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">John Burns Research and Consulting</a>.</p>
               
-              <p>My approach to analytics is pragmatic – choosing the <strong className="font-medium">most effective</strong>, and often the simplest, method that <strong className="font-medium">solves the problem</strong> and <strong className="font-medium">speaks to the demand of cross-functional teams</strong>. With experience in machine learning, causal inference, optimization, customer analytics, and GenAI applications, I specialize in delivering actionable insights tailored to your organization&apos;s goals.</p>
+              <p>My approach to analytics is pragmatic – choosing the <strong className="font-medium">most effective</strong>, and often the simplest, method that <strong className="font-medium">solves the problem</strong> and <strong className="font-medium">speaks to the demand of cross-functional teams</strong>.</p>
               
               <p>
                   <Link href="/projects" className="text-blue-600 hover:text-blue-800 underline">
@@ -45,12 +45,11 @@ export default function AboutPage() {
       </div>
 
       {/* Full-width Mountain Banner */}
-      <div className="w-full h-[400px] relative mb-20">
+      <div className="hidden min-[600px]:block w-full mb-20">
         <Image
           src={mountainImg}
           alt="Mountain landscape"
-          fill
-          className="object-cover"
+          className="w-full h-auto"
           priority
         />
       </div>
