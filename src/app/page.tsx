@@ -68,7 +68,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto pt-60 pb-30">
           <h2 className="text-4xl font-semibold mb-6 text-[#eaec90]">Creative Analytics to Solve Your Business Problems</h2>
           <p className="text-xl max-w-5xl mb-8 font-extralight text-[#eaec90]">
-            With experience in machine learning, causal inference, optimization, customer analytics, and beyond, I specialize in developing elegant analytics solutions that tailor to your organization&apos;s goals.
+            With experience in machine learning, causal inference, optimization, customer analytics, GenAI applications, and beyond, I specialize in developing elegant analytics solutions that tailor to your organization&apos;s goals.
           </p>
           <button 
             onClick={() => handleNavigation('/projects')}
