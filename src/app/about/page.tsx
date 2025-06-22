@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import mountainImg from "@/assets/images/about/mountain.jpg"
+import mountainImg from "@/assets/images/about/mountain.JPG"
 
 export default function AboutPage() {
   return (
