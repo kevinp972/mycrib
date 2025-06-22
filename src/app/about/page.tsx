@@ -11,14 +11,14 @@ export default function AboutPage() {
               <a 
                 href="/Xueshan_Kevin_Peng_Resume.pdf"
                 download
-                className="text-blue-600 hover:text-blue-800 underline text-2xl min-[460px]:text-xl font-light"
+                className="text-blue-600 hover:text-blue-800 underline text-lg md:text-xl font-light"
               >
                 Get My Resume
               </a>
             </div>
 
             {/* Right column with text content (2/3) */}
-            <div className="space-y-6 text-lg min-[460px]:text-xl font-light md:col-span-2">
+            <div className="space-y-6 text-lg md:text-xl font-light md:col-span-2">
             <p>Hey there,</p>
             
             <p>I&apos;m Kevin. I&apos;m passionate about building elegant analytics solutions to help organizations solve complex business problems with clarity and impact.</p>
@@ -45,56 +45,56 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             {/* Left column with title */}
             <div className="flex flex-col items-start">
-              <h2 className="text-2xl font-light">Skills</h2>
+              <h2 className="text-xl font-semibold text-[#183c34]">SKILLS</h2>
             </div>
 
             {/* Right column with skills content (2/3) */}
-            <div className="space-y-8 text-lg min-[460px]:text-xl font-light md:col-span-2">
+            <div className="space-y-4 text-lg md:text-xl font-light md:col-span-2">
               <div>
-                <h3 className="font-medium mb-2">Programming & Tools</h3>
+                <h3 className="font-medium">Programming & Tools</h3>
                 <p>Python (NumPy, pandas, scikit-learn, Dash) · R · SQL · Gurobi</p>
                 <p>Jupyter Notebooks · Git · Tableau · Power BI · Advanced Excel</p>
               </div>
 
               <div>
-                <h3 className="font-medium mb-2">Statistical & Machine Learning Methods</h3>
+                <h3 className="font-medium">Statistical & Machine Learning Methods</h3>
                 <p>Linear & Logistic Regression · Classification · Clustering · Ensemble Methods</p>
                 <p>Feature Engineering · Regularization (L1, L2) · Wrapper Methods</p>
               </div>
 
               <div>
-                <h3 className="font-medium mb-2">Causal Inference & Experimental Design</h3>
+                <h3 className="font-medium">Causal Inference & Experimental Design</h3>
                 <p>A/B Testing · Difference-in-Differences (DiD) · Regression Discontinuity (RDD) · Instrumental Variables (IV) · Panel Data Analysis</p>
               </div>
 
               <div>
-                <h3 className="font-medium mb-2">AI & Automation Workflows</h3>
+                <h3 className="font-medium">AI & Automation Workflows</h3>
                 <p>OpenAI APIs (File Search, Thread) · Prompt Engineering · JSON Parsing · PDF Extraction · Concurrent Processing · Python Automation</p>
               </div>
 
               <div>
-                <h3 className="font-medium mb-2">Data Science Foundations</h3>
+                <h3 className="font-medium">Data Science Foundations</h3>
                 <p>Statistics · Machine Learning · Causal Inference · Optimization · Data Management · Data Visualization</p>
               </div>
 
               <div>
-                <h3 className="font-medium mb-2">Applied Analytics</h3>
-                <p>Customer Analytics · Operations Analytics · Competitive Intelligence</p>
+                <h3 className="font-medium">Applied Analytics</h3>
+                <p>Customer Analytics · Operations Analytics · Competitive Analytics</p>
               </div>
             </div>
         </div>
       </div>
 
       {/* Education Section */}
-      <div className="max-w-6xl mx-auto pb-40">
+      <div className="max-w-6xl mx-auto pb-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
             {/* Left column with title */}
             <div className="flex flex-col items-start">
-              <h2 className="text-2xl font-light">Education</h2>
+              <h2 className="text-xl font-semibold text-[#183c34]">EDUCATION</h2>
             </div>
 
             {/* Right column with education content (2/3) */}
-            <div className="space-y-8 text-lg min-[460px]:text-xl font-light md:col-span-2">
+            <div className="space-y-4 text-lg md:text-xl font-light md:col-span-2">
               <div>
                 <h3 className="font-medium">UCLA Anderson School of Management</h3>
                 <p className="italic">Master of Science in Business Analytics</p>
@@ -108,6 +108,96 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-medium">Shanghai High School International Division</h3>
                 <p className="italic">High School Diploma</p>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      {/* Work Experience Section */}
+      <div className="max-w-6xl mx-auto pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+            {/* Left column with title */}
+            <div className="flex flex-col items-start">
+              <h2 className="text-xl font-semibold text-[#183c34]">WORK EXPERIENCE</h2>
+            </div>
+
+            {/* Right column with work experience content (2/3) */}
+            <div className="space-y-2 text-lg md:text-xl font-light md:col-span-2">
+              <div>
+                <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer">
+                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">John Burns Research and Consulting</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer">
+                  Data Analyst @ <span className="text-blue-600 hover:text-blue-800">UCLA Anderson Center for Impact</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="https://centerforcommunityenergy.org/" target="_blank" rel="noopener noreferrer">
+                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">Center for Community Energy</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="https://www.sageautomotiveinteriors.com/" target="_blank" rel="noopener noreferrer">
+                  Business Analyst @ <span className="text-blue-600 hover:text-blue-800">Sage Automotive Interiors</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="https://www.richlandcap.com/#banner" target="_blank" rel="noopener noreferrer">
+                  Analyst @ <span className="text-blue-600 hover:text-blue-800">Richland Capital</span>
+                </a>
+              </div>
+
+              <div>
+                <a href="https://www.zurich.com/" target="_blank" rel="noopener noreferrer">
+                  Underwriter @ <span className="text-blue-600 hover:text-blue-800">Zurich Insurance Group</span>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      {/* Side Quests Section */}
+      <div className="max-w-6xl mx-auto pb-40">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+            {/* Left column with title */}
+            <div className="flex flex-col items-start">
+              <h2 className="text-xl font-semibold text-[#183c34]">SIDE QUESTS</h2>
+            </div>
+
+            {/* Right column with side quests content (2/3) */}
+            <div className="space-y-2 text-lg md:text-xl font-light md:col-span-2">
+              <div>
+                <span className="font-medium">Global Finalist & National Second Place</span>, <span className="italic">KWHS Investment Competition</span>
+              </div>
+
+              <div>
+                <span className="font-medium">Lead Editor & Co-Producer</span>, <span className="italic">Stallions Basketball Team Documentary</span>
+              </div>
+
+              <div>
+                <span className="font-medium">National Finalist</span>, <span className="italic">Harvard China Thinks Big</span>
+              </div>
+
+              <div>
+                <span className="font-medium">Guest Lecturer</span>, <span className="italic">Jincheng Reading Club</span>
+              </div>
+
+              <div>
+                <span className="font-medium">Online Tutor</span>, <span className="italic">Shaonianpai Project (for socioeconomically disadvantaged students)</span>
+              </div>
+
+              <div>
+                <span className="font-medium">Elderly Care Volunteer</span>, <span className="italic">Webster House Health Center</span>
+              </div>
+
+              <div>
+                <span className="font-medium">Piano Classification: PD</span>, <span className="italic">ACM National Piano Playing Auditions</span>
               </div>
             </div>
         </div>
