@@ -100,7 +100,7 @@ export default function AboutPage() {
 
               <div>
                 <h3 className="font-medium">Time Series & Forecasting</h3>
-                <p>ARIMA · SARIMA · Exponential Smoothing · STL Decomposition · VAR · VECM · Forecasting & Backtesting · Time Series Feature Engineering · Cross-Correlation · Model Evaluation (AIC, RMSE)</p>
+                <p>ARIMA · SARIMA · Exponential Smoothing · STL Decomposition · VAR · VECM · Forecasting & Backtesting · Time Series Feature Engineering · Cross-Correlation</p>
               </div>
             </div>
           </div>
