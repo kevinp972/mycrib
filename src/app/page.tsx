@@ -33,7 +33,7 @@ export default function Home() {
                     <br />
                     DS Intern @ <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">JBREC</a>
                     <br />
-                    DA Intern @ <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Center for Impact</a>
+                    DS Intern @ <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Center for Impact</a>
                   </p>
                 </div>
                 <div className="flex-1">

@@ -12,7 +12,7 @@ export default function AboutPage() {
             {/* Left column with resume */}
             <div className="flex flex-col items-start">
               <Link
-                href="/Xueshan_Kevin_Peng_Resume.pdf"
+                href="/Xueshan_Peng_Resume_07192025.pdf"
                 download
                 className="text-blue-600 hover:text-blue-800 underline text-lg md:text-xl font-light"
               >
@@ -36,7 +36,7 @@ export default function AboutPage() {
                   </Link>
               </p>
               
-              <p>Let&apos;s get to know each other – <a href="mailto:kevinpeng2025@gmail.com" className="text-blue-600 hover:text-blue-800">kevinpeng2025@gmail.com</a></p>
+              <p>Let&apos;s chat! – <a href="mailto:kevinpeng2025@gmail.com" className="text-blue-600 hover:text-blue-800">kevinpeng2025@gmail.com</a></p>
               
               <p>Outside of work, I like to spend my time playing <Link href="/music" className="text-blue-600 hover:text-blue-800">music</Link>, playing tennis, taking <Link href="/gallery" className="text-blue-600 hover:text-blue-800">photos</Link>, watching films, and cooking good food to share with friends.</p>
             </div>
@@ -97,6 +97,11 @@ export default function AboutPage() {
                 <h3 className="font-medium">Applied Analytics</h3>
                 <p>Customer Analytics · Operations Analytics · Competitive Analytics</p>
               </div>
+
+              <div>
+                <h3 className="font-medium">Time Series & Forecasting</h3>
+                <p>ARIMA · SARIMA · Exponential Smoothing · STL Decomposition · VAR · VECM · Forecasting & Backtesting · Time Series Feature Engineering · Cross-Correlation · Model Evaluation (AIC, RMSE)</p>
+              </div>
             </div>
           </div>
         </div>
@@ -147,7 +152,7 @@ export default function AboutPage() {
 
               <div>
                 <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer">
-                  Data Analyst @ <span className="text-blue-600 hover:text-blue-800">UCLA Anderson Center for Impact</span>
+                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">UCLA Anderson Center for Impact</span>
                 </a>
               </div>
 
