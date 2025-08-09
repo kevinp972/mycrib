@@ -18,7 +18,7 @@ export default function MusicCard({ title, composer, image, link, isFeature = fa
           <Image
             src={image}
             alt={title}
-            className="object-cover"
+            className="object-cover transform transition-transform duration-300 ease-out group-hover:scale-105"
             fill
             sizes={isFeature ? "(max-width: 600px) 100vw, 100vw" : "(max-width: 600px) 100vw, 50vw"}
             priority
