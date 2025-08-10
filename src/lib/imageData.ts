@@ -1,6 +1,35 @@
 import type { StaticImageData } from 'next/image';
 
-export type GalleryImage = StaticImageData | string;
+export type ImageOrientation = 'portrait' | 'landscape';
+
+export interface Photo {
+  src: string;
+  width: number;
+  height: number;
+  key?: string;
+  alt?: string;
+  title?: string;
+  href?: string;
+  label?: string;
+  srcSet?: Array<{ src: string; width: number; height: number }>;
+  orientation?: ImageOrientation;
+  camera?: string;
+  film?: string;
+  location?: string;
+}
+
+function toStaticImageData(value: unknown): StaticImageData | undefined {
+  if (!value) return undefined;
+  if (typeof value === 'string') {
+    // Create a minimal StaticImageData-like object to satisfy typing consistently
+    return { src: value, width: 0, height: 0 } as unknown as StaticImageData;
+  }
+  const maybe = value as { src?: unknown };
+  if (maybe && typeof maybe.src === 'string') {
+    return value as StaticImageData;
+  }
+  return undefined;
+}
 
 // Tell TypeScript about webpack's require.context injected helper
 declare const require: {
@@ -18,8 +47,8 @@ type WebpackRequireContext<T> = {
   (id: string): { default: T }; // when called with a file path, it returns the module (in this case, an image module).
 };
 
-function importAllGalleryImages(): Record<string, GalleryImage> {
-  const result: Record<string, GalleryImage> = {};
+function importAllGalleryImages(): Record<string, StaticImageData> {
+  const result: Record<string, StaticImageData> = {};
 
   // Prefer Turbopack's import.meta.glob when available
   try {
@@ -28,15 +57,11 @@ function importAllGalleryImages(): Record<string, GalleryImage> {
       const modules = maybeGlob('../assets/images/gallery/*.{png,jpg,jpeg,JPG,JPEG}', { eager: true });
       for (const [path, mod] of Object.entries(modules)) {
         const raw = (mod as { default?: unknown }).default ?? mod;
-        if (!raw) continue;
         const fileNameWithExt = path.split('/').pop() as string;
         const baseName = fileNameWithExt.replace(/\.[^/.]+$/, '');
-        const normalized =
-          typeof raw === 'string'
-            ? raw
-            : (raw as StaticImageData).src ?? (raw as unknown as { src?: string }).src ?? (raw as unknown as string);
-        if (!normalized) continue;
-        result[baseName] = normalized as GalleryImage;
+        const staticImg = toStaticImageData(raw);
+        if (!staticImg) continue;
+        result[baseName] = staticImg;
       }
       return result;
     }
@@ -54,13 +79,9 @@ function importAllGalleryImages(): Record<string, GalleryImage> {
       const fileNameWithExt = key.replace('./', '');
       const baseName = fileNameWithExt.replace(/\.[^/.]+$/, '');
       const raw = (mod as { default?: unknown }).default ?? mod;
-      if (!raw) continue;
-      const normalized =
-        typeof raw === 'string'
-          ? raw
-          : (raw as StaticImageData).src ?? (raw as unknown as { src?: string }).src ?? (raw as unknown as string);
-      if (!normalized) continue;
-      result[baseName] = normalized as GalleryImage;
+      const staticImg = toStaticImageData(raw);
+      if (!staticImg) continue;
+      result[baseName] = staticImg;
     }
   } catch {
     // As a last resort, return empty map
@@ -69,82 +90,77 @@ function importAllGalleryImages(): Record<string, GalleryImage> {
   return result;
 }
 
-export const galleryByName: Readonly<Record<string, GalleryImage>> = importAllGalleryImages();
+export const galleryByName: Readonly<Record<string, StaticImageData>> = importAllGalleryImages();
 
-function getGalleryImage(name: string): GalleryImage {
-  // Use a unique query param to avoid duplicate React keys when multiple
-  // items fall back to the same placeholder image
-  return galleryByName[name] ?? `/placeholder.png?missing=${encodeURIComponent(name)}`;
+function deriveOrientationFromSize(width: number, height: number): ImageOrientation {
+  return width >= height ? 'landscape' : 'portrait';
 }
 
-export type ImageOrientation = 'portrait' | 'landscape';
-
-// Source-of-truth item (orientation optional)
-interface GalleryItemInput {
-  src: GalleryImage;
-  orientation?: ImageOrientation;
+type PhotoMeta = {
+  name: string;
+  alt?: string;
   camera?: string;
   film?: string;
   location?: string;
-  alt?: string;
-}
+  orientation?: ImageOrientation;
+};
 
-// Public item (orientation guaranteed)
-export interface GalleryItem extends Omit<GalleryItemInput, 'orientation'> {
-  orientation: ImageOrientation;
-}
-
-// Derive orientation for statically imported images when not obvious upfront
-function deriveOrientation(src: GalleryImage): ImageOrientation {
-  if (!src) return 'landscape';
-  if (typeof src === 'string') return 'landscape';
-  return src.width >= src.height ? 'landscape' : 'portrait';
-}
-
-// Internal list with optional orientation; we auto-fill below
-const galleryItemsInput: ReadonlyArray<GalleryItemInput> = [
-  { src: getGalleryImage('000003'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Siguniang Mountain' },
-  { src: getGalleryImage('000006'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Clouds and Mountains in Sichuan' },
-  { src: getGalleryImage('000027'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Goat in Sichuan' },
-  { src: getGalleryImage('000038'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sichuan' },
-  { src: getGalleryImage('000040'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags on Hill'},
-  { src: getGalleryImage('000044'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Alvin Shawshank Redemption' },
-  { src: getGalleryImage('000047'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sunlight' },
-  { src: getGalleryImage('000048'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 1' },
-  { src: getGalleryImage('000049'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 2' },
-  { src: getGalleryImage('000050'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Guy Standing by Highway' },
-  { src: getGalleryImage('000052'),          location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Wedding by River' },
-  { src: getGalleryImage('000055'),          location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 3' },
-  { src: getGalleryImage('000000010020'),    location: 'Joshua Tree, California, USA', film: 'Kodak UltraMax 400', alt: 'Joshua Trees' },
-  { src: getGalleryImage('000000010030'),    location: 'Paris, France', film: 'Kodak UltraMax 400', alt: 'Paris Traintracks' },
-  { src: getGalleryImage('000000010031'),    location: 'San Diego, California, USA', film: 'Kodak UltraMax 400', alt: 'Classic Car' },
-  { src: getGalleryImage('000000020023'),    location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Middle Finger' },
-  { src: getGalleryImage('000000020036'),    location: 'Grimes Canyon, California, USA', film: 'Kodak UltraMax 400', alt: 'Grimes Canyon' },
-  { src: getGalleryImage('1228844_0013'),    location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel 1' },
-  { src: getGalleryImage('1228844_0017'),    location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel 2' },
-  { src: getGalleryImage('1228844_0023'),    location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel Sunset 1' },
-  { src: getGalleryImage('1228844_0028'),    location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel Sunset 2' },
-  { src: getGalleryImage('1228844_0029'),    location: 'Ebina, Japan', film: 'Kodak UltraMax 400', alt: 'Yama'},
-  { src: getGalleryImage('1228844_0030'),    location: 'Ebina, Japan', film: 'Kodak UltraMax 400', alt: 'Tree under Clouds'},
-  { src: getGalleryImage('1228844_0032'),    location: 'Kita-Kamakura, Japan', film: 'Kodak UltraMax 400', alt: 'Golden Leaves'},
-  { src: getGalleryImage('1228844_0033'),    location: 'Kita-Kamakura, Japan', film: 'Kodak UltraMax 400', alt: 'Yuanjuesi 1'},
-  { src: getGalleryImage('1228844_0035'),    location: 'Kita-Kamakura, Japan', film: 'Kodak UltraMax 400', alt: 'Yuanjuesi 2'},
-  { src: getGalleryImage('1228844_0043'),    location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Lovebirds in Hiking Trail'},
-  { src: getGalleryImage('1228844_0048'),    location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Meditation 1'},
-  { src: getGalleryImage('1228844_0049'),    location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Meditation 2'},
-  { src: getGalleryImage('1228844_0051'),    location: 'Julian, California, USA', film: 'Kodak UltraMax 400', alt: 'Light B/W'},
-  { src: getGalleryImage('1228844_0069'),    location: 'Altadena, California, USA', film: 'Kodak UltraMax 400', alt: 'Branch in Sun'},
-  { src: getGalleryImage('26640008'),        location: 'Shanghai, China', film: 'Kodak UltraMax 400', camera: 'The Lomography Konstruktor', alt: 'Ian with Gun'},
-  { src: getGalleryImage('4750002'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Jessicas hands'},
-  { src: getGalleryImage('4750005'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Temple'},
-  { src: getGalleryImage('4750009'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Waitan' },
-  { src: getGalleryImage('4750014'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Sunrise 1' },
-  { src: getGalleryImage('4750015'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Sunrise 2' },
+const photoMetaList: ReadonlyArray<PhotoMeta> = [
+  { name: '000003',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Siguniang Mountain' },
+  { name: '000006',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Clouds and Mountains in Sichuan' },
+  { name: '000027',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Goat in Sichuan' },
+  { name: '000038',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sichuan' },
+  { name: '000040',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags on Hill' },
+  { name: '000044',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Alvin Shawshank Redemption' },
+  { name: '000047',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sunlight' },
+  { name: '000048',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 1' },
+  { name: '000049',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 2' },
+  { name: '000050',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Guy Standing by Highway' },
+  { name: '000052',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Wedding by River' },
+  { name: '000055',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 3' },
+  { name: '000000010020',      location: 'Joshua Tree, California, USA', film: 'Kodak UltraMax 400', alt: 'Joshua Trees' },
+  { name: '000000010030',      location: 'Paris, France', film: 'Kodak UltraMax 400', alt: 'Paris Traintracks' },
+  { name: '000000010031',      location: 'San Diego, California, USA', film: 'Kodak UltraMax 400', alt: 'Classic Car' },
+  { name: '000000020023',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Middle Finger' },
+  { name: '000000020036',      location: 'Grimes Canyon, California, USA', film: 'Kodak UltraMax 400', alt: 'Grimes Canyon' },
+  { name: '1228844_0013',      location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel 1' },
+  { name: '1228844_0017',      location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel 2' },
+  { name: '1228844_0023',      location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel Sunset 1' },
+  { name: '1228844_0028',      location: 'Carmel, California, USA', film: 'Kodak UltraMax 400', alt: 'Carmel Sunset 2' },
+  { name: '1228844_0029',      location: 'Ebina, Japan', film: 'Kodak UltraMax 400', alt: 'Yama' },
+  { name: '1228844_0030',      location: 'Ebina, Japan', film: 'Kodak UltraMax 400', alt: 'Tree under Clouds' },
+  { name: '1228844_0032',      location: 'Kita-Kamakura, Japan', film: 'Kodak UltraMax 400', alt: 'Golden Leaves' },
+  { name: '1228844_0033',      location: 'Kita-Kamakura, Japan', film: 'Kodak UltraMax 400', alt: 'Yuanjuesi 1' },
+  { name: '1228844_0035',      location: 'Kita-Kamakura, Japan', film: 'Kodak UltraMax 400', alt: 'Yuanjuesi 2' },
+  { name: '1228844_0043',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Lovebirds in Hiking Trail' },
+  { name: '1228844_0048',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Meditation 1' },
+  { name: '1228844_0049',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Meditation 2' },
+  { name: '1228844_0051',      location: 'Julian, California, USA', film: 'Kodak UltraMax 400', alt: 'Light B/W' },
+  { name: '1228844_0069',      location: 'Altadena, California, USA', film: 'Kodak UltraMax 400', alt: 'Branch in Sun' },
+  { name: '26640008',          location: 'Shanghai, China', film: 'Kodak UltraMax 400', camera: 'The Lomography Konstruktor', alt: 'Ian with Gun' },
+  { name: '4750002',           location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Jessicas hands' },
+  { name: '4750005',           location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Temple' },
+  { name: '4750009',           location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Waitan' },
+  { name: '4750014',           location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Sunrise 1' },
+  { name: '4750015',           location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Sunrise 2' },
 ];
 
-// Single exported list with orientation populated by default
-export const galleryItems = galleryItemsInput.map((item) => ({
-  ...item,
-  orientation: item.orientation ?? deriveOrientation(item.src),
-})) satisfies ReadonlyArray<GalleryItem>;
+export const photos: ReadonlyArray<Photo> = photoMetaList.reduce<Photo[]>((acc, meta) => {
+  const img = galleryByName[meta.name];
+  if (!img) return acc;
+  const base: Photo = {
+    src: img.src,
+    width: img.width,
+    height: img.height,
+    camera: meta.camera,
+    film: meta.film,
+    location: meta.location,
+    orientation: meta.orientation ?? deriveOrientationFromSize(img.width, img.height),
+  };
+  if (meta.alt) {
+    base.alt = meta.alt;
+  }
+  acc.push(base);
+  return acc;
+}, []);
 
