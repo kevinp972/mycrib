@@ -103,7 +103,6 @@ function deriveOrientation(src: GalleryImage): ImageOrientation {
 const galleryItemsInput: ReadonlyArray<GalleryItemInput> = [
   { src: getGalleryImage('000003'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Siguniang Mountain' },
   { src: getGalleryImage('000006'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Clouds and Mountains in Sichuan' },
-  { src: getGalleryImage('000002'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Siguniang Mountain with Alvin' },
   { src: getGalleryImage('000027'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Goat in Sichuan' },
   { src: getGalleryImage('000038'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sichuan' },
   { src: getGalleryImage('000040'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400' },
@@ -112,7 +111,6 @@ const galleryItemsInput: ReadonlyArray<GalleryItemInput> = [
   { src: getGalleryImage('000048'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('000049'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('000050'),   location: 'Western Sichuan, China', film: 'Kodak UltraMax 400' },
-  { src: getGalleryImage('000050-1'), location: 'Western Sichuan, China', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('000052'),          location: 'Western Sichuan, China', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('000055'),          location: 'Western Sichuan, China', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('000000010020'),    location: 'Joshua Tree, California, USA', film: 'Kodak UltraMax 400' },

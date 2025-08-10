@@ -7,7 +7,7 @@ export default function GalleryPage() {
       <div className="max-w-6xl mx-auto">
         <div className="columns-1 sm:columns-2 md:columns-3 [column-gap:2rem]">
           {galleryItems.map(({ src }: { src: GalleryImage }, i: number) => (
-            <div key={i} className="mb-[5rem] break-inside-avoid">
+            <div key={i} className="mb-[2rem] break-inside-avoid">
               {typeof src === 'string' ? (
                 <img src={src} alt="" className="w-full h-auto" loading="lazy" />
               ) : (
