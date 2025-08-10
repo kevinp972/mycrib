@@ -133,9 +133,13 @@ const galleryItemsInput: ReadonlyArray<GalleryItemInput> = [
   { src: getGalleryImage('1228844_0048'),    location: 'Ramona, California, USA', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('1228844_0049'),    location: 'Ramona, California, USA', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('1228844_0051'),    location: 'Julian, California, USA', film: 'Kodak UltraMax 400' },
+  { src: getGalleryImage('1228844_0069'),    location: 'Altadena, California, USA', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('26640008'),        location: 'Shanghai, China', film: 'Kodak UltraMax 400', camera: 'The Lomography Konstruktor'},
   { src: getGalleryImage('4750002'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400' },
   { src: getGalleryImage('4750005'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400' },
+  { src: getGalleryImage('4750009'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400' },
+  { src: getGalleryImage('4750014'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400' },
+  { src: getGalleryImage('4750015'),         location: 'Shanghai, China', film: 'Kodak UltraMax 400' },
 ];
 
 // Single exported list with orientation populated by default
