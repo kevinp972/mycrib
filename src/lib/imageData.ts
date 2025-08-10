@@ -24,11 +24,7 @@ function toStaticImageData(value: unknown): StaticImageData | undefined {
     // Create a minimal StaticImageData-like object to satisfy typing consistently
     return { src: value, width: 0, height: 0 } as unknown as StaticImageData;
   }
-  const maybe = value as { src?: unknown };
-  if (maybe && typeof maybe.src === 'string') {
-    return value as StaticImageData;
-  }
-  return undefined;
+  if (typeof (value as { src?: unknown }).src === 'string') return value as StaticImageData;
 }
 
 // Tell TypeScript about webpack's require.context injected helper
