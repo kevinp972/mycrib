@@ -1,7 +1,21 @@
+import type { StaticImageData } from 'next/image';
+import { galleryItems, type GalleryImage } from '@/lib/imageData';
+
 export default function GalleryPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-2xl font-semibold">Photo Gallery - Coming Soon</h1>
-    </div>
+    <main className="w-full px-8 pb-40">
+
+      <div className="px-24 columns-1 sm:columns-2 md:columns-3 [column-gap:5rem]">
+        {galleryItems.map(({ src }: { src: GalleryImage }, i: number) => (
+          <div key={i} className="mb-4 break-inside-avoid">
+            {typeof src === 'string' ? (
+              <img src={src} alt="" className="w-full h-auto" loading="lazy" />
+            ) : (
+              <img src={src.src} alt="" className="w-full h-auto" loading="lazy" />
+            )}
+          </div>
+        ))}
+      </div>
+    </main>
   );
-} 
+}
