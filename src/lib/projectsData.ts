@@ -78,7 +78,7 @@ export const projects: readonly Project[] = [
     title: "Clutch Replacement on My Friend's Mustang GT 2017",
     categories: ["Mechanic Work", "Fun Time with Bro"],
     image: clutchImage,
-    link: "https://example.com",
+    link: "/projects/clutch",
     backgroundColor: "bg-[#ECEAC0]",
     zoom: 0.7
   }
