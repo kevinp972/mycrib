@@ -99,23 +99,25 @@ type PhotoMeta = {
   film?: string;
   location?: string;
   orientation?: ImageOrientation;
+  width?: number;
+  height?: number;
 };
 
 const photoMetaList: ReadonlyArray<PhotoMeta> = [
-  { name: '000003',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Siguniang Mountain' },
-  { name: '000006',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Clouds and Mountains in Sichuan' },
   { name: '000027',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Goat in Sichuan' },
-  { name: '000038',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sichuan' },
+  { name: '000049',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 2' },
+  { name: '000002',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Siguniang Mountain' },
   { name: '000040',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags on Hill' },
+  { name: '000006',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Clouds and Mountains in Sichuan' },
+  { name: '000050',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Guy Standing by Highway' },
+  { name: '000038',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sichuan' },
   { name: '000044',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Alvin Shawshank Redemption' },
   { name: '000047',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Prayer Flags in Sunlight' },
   { name: '000048',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 1' },
-  { name: '000049',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 2' },
-  { name: '000050',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Guy Standing by Highway' },
   { name: '000052',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Wedding by River' },
   { name: '000055',            location: 'Western Sichuan, China', film: 'Kodak UltraMax 400', alt: 'Rocky Mountain 3' },
   { name: '000000010020',      location: 'Joshua Tree, California, USA', film: 'Kodak UltraMax 400', alt: 'Joshua Trees' },
-  { name: '000000010030',      location: 'Paris, France', film: 'Kodak UltraMax 400', alt: 'Paris Traintracks' },
+  { name: '000000010030',      location: 'Paris, France', film: 'Kodak UltraMax 400', alt: 'Paris Traintracks', width:  2075, height: 3130},
   { name: '000000010031',      location: 'San Diego, California, USA', film: 'Kodak UltraMax 400', alt: 'Classic Car' },
   { name: '000000020023',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Middle Finger' },
   { name: '000000020036',      location: 'Grimes Canyon, California, USA', film: 'Kodak UltraMax 400', alt: 'Grimes Canyon' },
@@ -130,9 +132,9 @@ const photoMetaList: ReadonlyArray<PhotoMeta> = [
   { name: '1228844_0035',      location: 'Kita-Kamakura, Japan', film: 'Kodak UltraMax 400', alt: 'Yuanjuesi 2' },
   { name: '1228844_0043',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Lovebirds in Hiking Trail' },
   { name: '1228844_0048',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Meditation 1' },
-  { name: '1228844_0049',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Meditation 2' },
+  { name: '1228844_0049',      location: 'Ramona, California, USA', film: 'Kodak UltraMax 400', alt: 'Meditation 2', width: 3035, height: 4346},
   { name: '1228844_0051',      location: 'Julian, California, USA', film: 'Kodak UltraMax 400', alt: 'Light B/W' },
-  { name: '1228844_0069',      location: 'Altadena, California, USA', film: 'Kodak UltraMax 400', alt: 'Branch in Sun' },
+  { name: '1228844_0069',      location: 'Altadena, California, USA', film: 'Kodak UltraMax 400', alt: 'Branch in Sun', width: 3035, height: 4346},
   { name: '26640008',          location: 'Shanghai, China', film: 'Kodak UltraMax 400', camera: 'The Lomography Konstruktor', alt: 'Ian with Gun' },
   { name: '4750002',           location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Jessicas hands' },
   { name: '4750005',           location: 'Shanghai, China', film: 'Kodak UltraMax 400', alt: 'Shanghai Temple' },
@@ -144,14 +146,16 @@ const photoMetaList: ReadonlyArray<PhotoMeta> = [
 export const photos: ReadonlyArray<Photo> = photoMetaList.reduce<Photo[]>((acc, meta) => {
   const img = galleryByName[meta.name];
   if (!img) return acc;
+  const width = meta.width ?? img.width;
+  const height = meta.height ?? img.height;
   const base: Photo = {
     src: img.src,
-    width: img.width,
-    height: img.height,
+    width,
+    height,
     camera: meta.camera,
     film: meta.film,
     location: meta.location,
-    orientation: meta.orientation ?? deriveOrientationFromSize(img.width, img.height),
+    orientation: meta.orientation ?? deriveOrientationFromSize(width, height),
   };
   if (meta.alt) {
     base.alt = meta.alt;
