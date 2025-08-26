@@ -7,6 +7,18 @@ import "react-photo-album/masonry.css";
 export default function GalleryPage() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
+  const goToNext = () => {
+    if (activeIndex !== null) {
+      setActiveIndex((activeIndex + 1) % photos.length);
+    }
+  };
+
+  const goToPrevious = () => {
+    if (activeIndex !== null) {
+      setActiveIndex(activeIndex === 0 ? photos.length - 1 : activeIndex - 1);
+    }
+  };
+
   return (
     <main className="w-full px-8">
       <div className="max-w-6xl mx-auto pb-20">
@@ -55,11 +67,30 @@ export default function GalleryPage() {
             </svg>
           </button>
 
+          {/* Left navigation area */}
+          <div
+            className="absolute left-0 top-0 w-1/2 h-full z-50 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              goToPrevious();
+            }}
+            aria-label="Previous image"
+          />
+
+          {/* Right navigation area */}
+          <div
+            className="absolute right-0 top-0 w-1/2 h-full z-50 cursor-pointer"
+            onClick={(e) => {
+              e.stopPropagation();
+              goToNext();
+            }}
+            aria-label="Next image"
+          />
+
           <img
             src={photos[activeIndex].src}
             alt={photos[activeIndex].alt ?? 'Photo'}
-            className="max-w-[90vw] max-h-[85vh] object-contain"
-            onClick={(e) => e.stopPropagation()}
+            className="max-w-[90vw] max-h-[85vh] object-contain pointer-events-none"
           />
         </div>
       )}
