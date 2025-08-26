@@ -12,7 +12,7 @@ export default function AboutPage() {
             {/* Left column with resume */}
             <div className="flex flex-col items-start">
               <Link
-                href="/Xueshan_Peng_Resume_07192025.pdf"
+                href="/Xueshan_Peng_Resume_08222025.pdf"
                 download
                 className="text-blue-600 hover:text-blue-800 underline text-lg md:text-xl font-light"
               >
@@ -23,21 +23,21 @@ export default function AboutPage() {
             {/* Right column with text content (2/3) */}
             <div className="space-y-6 text-lg md:text-xl font-light md:col-span-2">
               <p>Hey there,</p>
-              
+
               <p>I&apos;m Kevin. I&apos;m passionate about building elegant analytics solutions to help organizations solve complex business problems with clarity and impact.</p>
-              
-              <p>I&apos;m currently working on building contemporaneous models of housing market dynamics at <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">John Burns Research and Consulting</a>.</p>
-              
+
+              <p>I&apos;m currently working on building forecasting and contemporaneous models of housing market dynamics at <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">John Burns Research and Consulting</a>.</p>
+
               <p>My approach to analytics is pragmatic – choosing the <strong className="font-medium">most effective</strong>, and often the simplest, method that <strong className="font-medium">solves the problem</strong> and <strong className="font-medium">speaks to the demand of cross-functional teams</strong>.</p>
-              
+
               <p>
-                  <Link href="/projects" className="text-blue-600 hover:text-blue-800 underline">
+                <Link href="/projects" className="text-blue-600 hover:text-blue-800 underline">
                   Explore my projects here.
-                  </Link>
+                </Link>
               </p>
-              
+
               <p>Let&apos;s chat! – <a href="mailto:kevinpeng2025@gmail.com" className="text-blue-600 hover:text-blue-800">kevinpeng2025@gmail.com</a></p>
-              
+
               <p>Outside of work, I like to spend my time playing <Link href="/music" className="text-blue-600 hover:text-blue-800">music</Link>, playing tennis, taking <Link href="/gallery" className="text-blue-600 hover:text-blue-800">photos</Link>, watching films, and cooking good food to share with friends.</p>
             </div>
           </div>

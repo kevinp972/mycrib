@@ -22,14 +22,14 @@ export default function Home() {
           <div className="flex justify-between items-start gap-8">
             <div className="max-w-2xl">
               <p className="text-xl mb-12">
-                Hi, I&apos;m Xueshan (Kevin) Peng — a data scientist graduating in December 2025, seeking full-time roles starting in January 2026.
+                Hi, I&apos;m Xueshan (Kevin) Peng — a data scientist with 2+ years of experience, graduating in December 2025 and seeking full-time roles starting in January 2026.
               </p>
 
               <div className="flex flex-col min-[550px]:flex-row gap-8 mb-12 pt-10">
                 <div className="flex-1">
                   <h2 className="text-2xl font-medium mb-2">Currently</h2>
                   <p className="text-lg font-extralight">
-                    <a href="https://www.anderson.ucla.edu/degrees/master-of-science-in-business-analytics-msba" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">UCLA MSBA</a> Candidate 
+                    <a href="https://www.anderson.ucla.edu/degrees/master-of-science-in-business-analytics-msba" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">UCLA MSBA</a> Candidate
                     <br />
                     DS Intern @ <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">JBREC</a>
                     <br />
@@ -42,7 +42,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={() => handleNavigation('/about')}
                 className="inline-block bg-[#2D2D2D] text-white px-7 py-3 rounded-full text-xl hover:bg-black transition-colors"
               >
@@ -70,7 +70,7 @@ export default function Home() {
           <p className="text-xl max-w-5xl mb-8 font-extralight text-[#eaec90]">
             With experience in machine learning, causal inference, optimization, customer analytics, GenAI applications, and beyond, I specialize in developing elegant analytics solutions that tailor to your organization&apos;s goals.
           </p>
-          <button 
+          <button
             onClick={() => handleNavigation('/projects')}
             className="inline-block bg-[#eaec90] text-[#183c34] px-7 py-3 rounded-full text-xl hover:bg-[background] transition-colors"
           >
@@ -87,13 +87,13 @@ export default function Home() {
             To be human is to dwell in constant relation — with others, with oneself, with the world&apos;s vast and murmuring presence. Art becomes our vessel in this endless crossing, and through it, we are granted glimpses of beauty: fleeting, radiant, and sometimes aching — but always true.
           </p>
           <div className="flex gap-4">
-            <button 
+            <button
               onClick={() => handleNavigation('/music')}
               className="inline-block border border-[#2D2D2D] text-[#2D2D2D]  px-7 py-3 rounded-full text-xl hover:bg-[#2D2D2D] hover:text-white transition-colors"
             >
               Music
             </button>
-            <button 
+            <button
               onClick={() => handleNavigation('/gallery')}
               className="inline-block bg-[#2D2D2D] text-white px-7 py-3 rounded-full text-xl hover:bg-black transition-colors"
             >
