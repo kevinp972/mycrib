@@ -28,7 +28,7 @@ export default function GalleryPage() {
 
       {activeIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-white/60 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white/85"
           onClick={() => setActiveIndex(null)}
           role="dialog"
           aria-modal="true"
