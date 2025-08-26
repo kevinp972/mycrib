@@ -48,7 +48,7 @@ export default function GalleryPage() {
           {/* Close button */}
           <button
             onClick={() => setActiveIndex(null)}
-            className="absolute top-4 right-4 z-60 w-10 h-10 flex items-center justify-center text-black/60 hover:text-black/80 transition-colors duration-200"
+            className="absolute top-4 right-4 z-60 w-10 h-10 flex items-center justify-center text-black/60 hover:text-black/80 transition-colors duration-200 cursor-pointer"
             aria-label="Close photo"
           >
             <svg
@@ -69,7 +69,7 @@ export default function GalleryPage() {
 
           {/* Left navigation area */}
           <div
-            className="absolute left-0 top-0 w-1/2 h-full z-50 cursor-pointer"
+            className="absolute left-0 top-0 w-1/2 h-full z-50 cursor-default"
             onClick={(e) => {
               e.stopPropagation();
               goToPrevious();
@@ -79,13 +79,45 @@ export default function GalleryPage() {
 
           {/* Right navigation area */}
           <div
-            className="absolute right-0 top-0 w-1/2 h-full z-50 cursor-pointer"
+            className="absolute right-0 top-0 w-1/2 h-full z-50 cursor-default"
             onClick={(e) => {
               e.stopPropagation();
               goToNext();
             }}
             aria-label="Next image"
           />
+
+          {/* Left arrow indicator */}
+          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-60 cursor-pointer">
+            <svg
+              className="w-8 h-8 text-black/60 hover:text-black/80 transition-colors duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeWidth={1}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </div>
+
+          {/* Right arrow indicator */}
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-60 cursor-pointer">
+            <svg
+              className="w-8 h-8 text-black/60 hover:text-black/80 transition-colors duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeWidth={1}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
 
           <img
             src={photos[activeIndex].src}
