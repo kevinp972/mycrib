@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { photos } from '@/lib/imageData';
 import { MasonryPhotoAlbum } from 'react-photo-album';
 import "react-photo-album/masonry.css";
@@ -18,6 +18,22 @@ export default function GalleryPage() {
       setActiveIndex(activeIndex === 0 ? photos.length - 1 : activeIndex - 1);
     }
   };
+
+  // Lock/unlock body scroll when lightbox opens/closes
+  useEffect(() => {
+    if (activeIndex !== null) {
+      // Lock scroll
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Unlock scroll
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeIndex]);
 
   return (
     <main className="w-full px-8">
@@ -88,7 +104,13 @@ export default function GalleryPage() {
           />
 
           {/* Left arrow indicator */}
-          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-60 cursor-pointer">
+          <div
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-60 cursor-pointer hidden sm:block"
+            onClick={(e) => {
+              e.stopPropagation();
+              goToPrevious();
+            }}
+          >
             <svg
               className="w-8 h-8 text-black/60 hover:text-black/80 transition-colors duration-200"
               fill="none"
@@ -104,7 +126,13 @@ export default function GalleryPage() {
           </div>
 
           {/* Right arrow indicator */}
-          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-60 cursor-pointer">
+          <div
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-60 cursor-pointer hidden sm:block"
+            onClick={(e) => {
+              e.stopPropagation();
+              goToNext();
+            }}
+          >
             <svg
               className="w-8 h-8 text-black/60 hover:text-black/80 transition-colors duration-200"
               fill="none"
@@ -122,7 +150,7 @@ export default function GalleryPage() {
           <img
             src={photos[activeIndex].src}
             alt={photos[activeIndex].alt ?? 'Photo'}
-            className="max-w-[90vw] max-h-[85vh] object-contain pointer-events-none"
+            className="max-w-[85vw] sm:max-w-[80vw] max-h-[85vh] object-contain pointer-events-none"
           />
         </div>
       )}
