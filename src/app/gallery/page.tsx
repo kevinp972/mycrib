@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 import { useState } from 'react';
 import { photos } from '@/lib/imageData';
 import { MasonryPhotoAlbum } from 'react-photo-album';
@@ -10,13 +10,13 @@ export default function GalleryPage() {
   return (
     <main className="w-full px-8">
       <div className="max-w-6xl mx-auto pb-20">
-        <MasonryPhotoAlbum 
-          photos={[...photos]} 
+        <MasonryPhotoAlbum
+          photos={[...photos]}
           onClick={({ index }: { index: number }) => setActiveIndex(index)}
           columns={(containerWidth) => {
             if (containerWidth >= 460) return 2
             return 1
-          }} 
+          }}
           spacing={(containerWidth) => {
             if (containerWidth > 900) return 15
             if (containerWidth >= 460) return 5
@@ -33,10 +33,33 @@ export default function GalleryPage() {
           role="dialog"
           aria-modal="true"
         >
+          {/* Close button */}
+          <button
+            onClick={() => setActiveIndex(null)}
+            className="absolute top-4 right-4 z-60 w-10 h-10 flex items-center justify-center text-black/60 hover:text-black/80 transition-colors duration-200"
+            aria-label="Close photo"
+          >
+            <svg
+              className="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
           <img
             src={photos[activeIndex].src}
             alt={photos[activeIndex].alt ?? 'Photo'}
-            className="max-w-[90vw] max-h-[85vh] object-contain rounded-md shadow-2xl"
+            className="max-w-[90vw] max-h-[85vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
