@@ -27,6 +27,7 @@ export default function GalleryPage() {
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault(); // Prevent default scrolling behavior
     touchEndX.current = e.touches[0].clientX;
   };
 
@@ -54,16 +55,19 @@ export default function GalleryPage() {
   // Lock/unlock body scroll when lightbox opens/closes
   useEffect(() => {
     if (activeIndex !== null) {
-      // Lock scroll
+      // Lock scroll and prevent touch scrolling
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
     } else {
-      // Unlock scroll
+      // Unlock scroll and restore touch actions
       document.body.style.overflow = 'unset';
+      document.body.style.touchAction = 'auto';
     }
 
     // Cleanup on unmount
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.style.touchAction = 'auto';
     };
   }, [activeIndex]);
 
