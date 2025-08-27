@@ -172,7 +172,6 @@ const photoMetaList: ReadonlyArray<PhotoMeta> = [
   { name: 'IMG_6388', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Melrose Market 1' },
   { name: 'IMG_6391', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Melrose Market 2' },
   { name: 'IMG_6393', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Jazz Photos' },
-  { name: 'IMG_6397', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Fireworks' },
 ];
 
 export const photos: ReadonlyArray<Photo> = photoMetaList.reduce<Photo[]>((acc, meta) => {
