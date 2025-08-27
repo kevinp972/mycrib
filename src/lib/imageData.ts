@@ -4,6 +4,7 @@ export type ImageOrientation = 'portrait' | 'landscape';
 
 export interface Photo {
   src: string;
+  thumbnailSrc?: string;
   width: number;
   height: number;
   key?: string;
@@ -55,6 +56,8 @@ function importAllGalleryImages(): Record<string, StaticImageData> {
         const raw = (mod as { default?: unknown }).default ?? mod;
         const fileNameWithExt = path.split('/').pop() as string;
         const baseName = fileNameWithExt.replace(/\.[^/.]+$/, '');
+        // Skip thumbnail files in the main gallery
+        if (baseName.endsWith('_thumbnail')) continue;
         const staticImg = toStaticImageData(raw);
         if (!staticImg) continue;
         result[baseName] = staticImg;
@@ -74,6 +77,51 @@ function importAllGalleryImages(): Record<string, StaticImageData> {
       const mod = context(key) as unknown as { default?: unknown } | unknown;
       const fileNameWithExt = key.replace('./', '');
       const baseName = fileNameWithExt.replace(/\.[^/.]+$/, '');
+      // Skip thumbnail files in the main gallery
+      if (baseName.endsWith('_thumbnail')) continue;
+      const raw = (mod as { default?: unknown }).default ?? mod;
+      const staticImg = toStaticImageData(raw);
+      if (!staticImg) continue;
+      result[baseName] = staticImg;
+    }
+  } catch {
+    // As a last resort, return empty map
+  }
+
+  return result;
+}
+
+function importAllThumbnailImages(): Record<string, StaticImageData> {
+  const result: Record<string, StaticImageData> = {};
+
+  // Prefer Turbopack's import.meta.glob when available
+  try {
+    const maybeGlob = (import.meta as unknown as { glob?: (pattern: string, options?: { eager?: boolean }) => Record<string, unknown> }).glob;
+    if (typeof maybeGlob === 'function') {
+      const modules = maybeGlob('../assets/images/gallery/*_thumbnail.{png,jpg,jpeg,JPG,JPEG}', { eager: true });
+      for (const [path, mod] of Object.entries(modules)) {
+        const raw = (mod as { default?: unknown }).default ?? mod;
+        const fileNameWithExt = path.split('/').pop() as string;
+        const baseName = fileNameWithExt.replace(/\.[^/.]+$/, '').replace('_thumbnail', '');
+        const staticImg = toStaticImageData(raw);
+        if (!staticImg) continue;
+        result[baseName] = staticImg;
+      }
+      return result;
+    }
+  } catch {
+    // Ignore and fall back to webpack's require.context
+  }
+
+  // Fallback for webpack environments
+  try {
+    // The following uses webpack's require.context so the bundler can statically analyze the directory
+    // eslint-disable-next-line @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
+    const context = require.context('../assets/images/gallery', false, /_thumbnail\.(png|jpe?g)$/i);
+    for (const key of context.keys()) {
+      const mod = context(key) as unknown as { default?: unknown } | unknown;
+      const fileNameWithExt = key.replace('./', '');
+      const baseName = fileNameWithExt.replace(/\.[^/.]+$/, '').replace('_thumbnail', '');
       const raw = (mod as { default?: unknown }).default ?? mod;
       const staticImg = toStaticImageData(raw);
       if (!staticImg) continue;
@@ -87,6 +135,7 @@ function importAllGalleryImages(): Record<string, StaticImageData> {
 }
 
 export const galleryByName: Readonly<Record<string, StaticImageData>> = importAllGalleryImages();
+export const thumbnailsByName: Readonly<Record<string, StaticImageData>> = importAllThumbnailImages();
 
 function deriveOrientationFromSize(width: number, height: number): ImageOrientation {
   return width >= height ? 'landscape' : 'portrait';
@@ -196,10 +245,12 @@ const photoMetaList: ReadonlyArray<PhotoMeta> = [
 export const photos: ReadonlyArray<Photo> = photoMetaList.reduce<Photo[]>((acc, meta) => {
   const img = galleryByName[meta.name];
   if (!img) return acc;
+  const thumbnail = thumbnailsByName[meta.name];
   const width = meta.width ?? img.width;
   const height = meta.height ?? img.height;
   const base: Photo = {
     src: img.src,
+    thumbnailSrc: thumbnail?.src,
     width,
     height,
     camera: meta.camera,

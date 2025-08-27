@@ -1,10 +1,17 @@
 'use client'
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { photos } from '@/lib/imageData';
 import { MasonryPhotoAlbum } from 'react-photo-album';
 import "react-photo-album/masonry.css";
 
 export default function GalleryPage() {
+  // Create photos array with thumbnails for the masonry view
+  const thumbnailPhotos = useMemo(() => {
+    return photos.map(photo => ({
+      ...photo,
+      src: photo.thumbnailSrc || photo.src, // Use thumbnail if available, fallback to original
+    }));
+  }, []);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
@@ -75,7 +82,7 @@ export default function GalleryPage() {
     <main className="w-full px-8">
       <div className="max-w-6xl mx-auto pb-20">
         <MasonryPhotoAlbum
-          photos={[...photos]}
+          photos={[...thumbnailPhotos]}
           onClick={({ index }: { index: number }) => setActiveIndex(index)}
           columns={(containerWidth) => {
             if (containerWidth >= 460) return 2
