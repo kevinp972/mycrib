@@ -1,11 +1,13 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { photos } from '@/lib/imageData';
 import { MasonryPhotoAlbum } from 'react-photo-album';
 import "react-photo-album/masonry.css";
 
 export default function GalleryPage() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const goToNext = () => {
     if (activeIndex !== null) {
@@ -17,6 +19,36 @@ export default function GalleryPage() {
     if (activeIndex !== null) {
       setActiveIndex(activeIndex === 0 ? photos.length - 1 : activeIndex - 1);
     }
+  };
+
+  // Handle touch events for swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const deltaX = touchStartX.current - touchEndX.current;
+      const minSwipeDistance = 50; // Minimum distance for a swipe
+
+      if (Math.abs(deltaX) > minSwipeDistance) {
+        if (deltaX > 0) {
+          // Swiped left - go to next image
+          goToNext();
+        } else {
+          // Swiped right - go to previous image
+          goToPrevious();
+        }
+      }
+    }
+
+    // Reset touch positions
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   // Lock/unlock body scroll when lightbox opens/closes
@@ -58,6 +90,9 @@ export default function GalleryPage() {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-white/85"
           onClick={() => setActiveIndex(null)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           role="dialog"
           aria-modal="true"
         >
