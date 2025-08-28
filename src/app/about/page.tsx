@@ -12,7 +12,7 @@ export default function AboutPage() {
             {/* Left column with resume */}
             <div className="flex flex-col items-start">
               <Link
-                href="/Xueshan_Peng_Resume_08222025.pdf"
+                href="/Xueshan_Peng_Resume_08052025.pdf"
                 download
                 className="text-blue-600 hover:text-blue-800 underline text-lg md:text-xl font-light"
               >
@@ -193,6 +193,10 @@ export default function AboutPage() {
 
             {/* Right column with side quests content (2/3) */}
             <div className="space-y-2 text-lg md:text-xl font-light md:col-span-2">
+              <div>
+                <span className="font-medium">Vice President of Student Onboarding</span>, <span className="italic">UCLA MSBA Student Government</span>
+              </div>
+
               <div>
                 <span className="font-medium">Global Finalist & National Second Place</span>, <span className="italic">KWHS Investment Competition</span>
               </div>
