@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import type { StaticImageData } from 'next/image';
-import _20250810220324 from '@/assets/images/projects/clutch/_20250810220324.jpg';
-import _20250810220405 from '@/assets/images/projects/clutch/_20250810220405.jpg';
-import _20250810220409 from '@/assets/images/projects/clutch/_20250810220409.jpg';
-import _20250810220412 from '@/assets/images/projects/clutch/_20250810220412.jpg';
-import _20250810220415 from '@/assets/images/projects/clutch/_20250810220415.jpg';
-import _20250810220420 from '@/assets/images/projects/clutch/_20250810220420.jpg';
-import _20250810220423 from '@/assets/images/projects/clutch/_20250810220423.jpg';
-import _20250810220426 from '@/assets/images/projects/clutch/_20250810220426.jpg';
+import _20250810220324 from '@/assets/images/projects/clutch/_20250810220324_thumbnail.jpg';
+import _20250810220405 from '@/assets/images/projects/clutch/_20250810220405_thumbnail.jpg';
+import _20250810220409 from '@/assets/images/projects/clutch/_20250810220409_thumbnail.jpg';
+import _20250810220412 from '@/assets/images/projects/clutch/_20250810220412_thumbnail.jpg';
+import _20250810220415 from '@/assets/images/projects/clutch/_20250810220415_thumbnail.jpg';
+import _20250810220420 from '@/assets/images/projects/clutch/_20250810220420_thumbnail.jpg';
+import _20250810220423 from '@/assets/images/projects/clutch/_20250810220423_thumbnail.jpg';
+import _20250810220426 from '@/assets/images/projects/clutch/_20250810220426_thumbnail.jpg';
 
 export default function ClutchProjectPage() {
   const images: ReadonlyArray<{ src: StaticImageData; alt: string }> = [
