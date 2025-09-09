@@ -22,7 +22,7 @@ export default function Home() {
           <div className="flex justify-between items-start gap-8">
             <div className="max-w-2xl">
               <p className="text-xl mb-12">
-                Hi, I&apos;m Xueshan (Kevin) Peng — a data scientist with 2+ years of experience, graduating in December 2025 and seeking full-time roles starting in January 2026.
+                Hi, I&apos;m Xueshan (Kevin) Peng, a data scientist with 2+ years of experience. I will graduate in December 2025 and am currently seeking full-time opportunities.
               </p>
 
               <div className="flex flex-col min-[550px]:flex-row gap-8 mb-12 pt-10">
@@ -30,8 +30,6 @@ export default function Home() {
                   <h2 className="text-2xl font-medium mb-2">Currently</h2>
                   <p className="text-lg font-extralight">
                     <a href="https://www.anderson.ucla.edu/degrees/master-of-science-in-business-analytics-msba" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">UCLA MSBA</a> Candidate
-                    <br />
-                    DS Intern @ <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">JBREC</a>
                     <br />
                     DS Intern @ <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Center for Impact</a>
                   </p>

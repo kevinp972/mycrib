@@ -12,7 +12,7 @@ export default function AboutPage() {
             {/* Left column with resume */}
             <div className="flex flex-col items-start">
               <Link
-                href="/Xueshan_Peng_Resume_08052025.pdf"
+                href="/Xueshan_Peng_Resume_09092025.pdf"
                 download
                 className="text-blue-600 hover:text-blue-800 underline text-lg md:text-xl font-light"
               >
@@ -26,7 +26,7 @@ export default function AboutPage() {
 
               <p>I&apos;m Kevin. I&apos;m passionate about building elegant analytics solutions to help organizations solve complex business problems with clarity and impact.</p>
 
-              <p>I&apos;m currently working on building forecasting and contemporaneous models of housing market dynamics at <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">John Burns Research and Consulting</a>.</p>
+              <p>I&apos;m currently working on ESG data analytics at <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Center for Impact</a>, building custom LLM pipelines and dashboards  to support research and sustainability strategy development.</p>
 
               <p>My approach to analytics is pragmatic – choosing the <strong className="font-medium">most effective</strong>, and often the simplest, method that <strong className="font-medium">solves the problem</strong> and <strong className="font-medium">speaks to the demand of cross-functional teams</strong>.</p>
 
@@ -145,14 +145,14 @@ export default function AboutPage() {
             {/* Right column with work experience content (2/3) */}
             <div className="space-y-2 text-lg md:text-xl font-light md:col-span-2">
               <div>
-                <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer">
-                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">John Burns Research and Consulting</span>
+                <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer">
+                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">UCLA Anderson Center for Impact</span>
                 </a>
               </div>
 
               <div>
-                <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer">
-                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">UCLA Anderson Center for Impact</span>
+                <a href="https://jbrec.com/" target="_blank" rel="noopener noreferrer">
+                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">John Burns Research and Consulting</span>
                 </a>
               </div>
 
