@@ -12,7 +12,7 @@ export default function AboutPage() {
             {/* Left column with resume */}
             <div className="flex flex-col items-start">
               <Link
-                href="/Xueshan_Peng_Resume_09092025.pdf"
+                href="/Xueshan_Peng_Resume_11032025.pdf"
                 download
                 className="text-blue-600 hover:text-blue-800 underline text-lg md:text-xl font-light"
               >
