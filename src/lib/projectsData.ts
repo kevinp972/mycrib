@@ -1,4 +1,6 @@
 import { StaticImageData } from 'next/image';
+import chatbotImage from '@/assets/images/projects/msba-chatbot.png';
+import trafficImage from '@/assets/images/projects/objectdetection.jpg';
 import lyftImage from '@/assets/images/projects/lyft.png';
 import etlImage from '@/assets/images/projects/etl-code-snippet.png';
 import creditImage from '@/assets/images/projects/credit-cards.png';
@@ -14,7 +16,7 @@ export interface Project {
   categories: string[];
   image: StaticImageData;
   link: string;
-  backgroundColor: string;
+  backgroundColor?: string;
   zoom?: number; // Optional zoom level, defaults to 1 if not specified
 }
 
@@ -36,12 +38,19 @@ export const projects: readonly Project[] = [
     zoom: 0.9 
   },
   {
-    title: "Optimizing Credit Score Cutoffs with RDD",
-    categories: ["Causal Inference", "Behavioral Modeling", "Data-Driven Policy Design"],
-    image: creditImage,
-    link: "https://github.com/kevinp972/rdd-credit-limit",
-    backgroundColor: "bg-[black]",
-    zoom: 1.1 
+    title: "RAG-Powered AI Agent for UCLA MSBA",
+    categories: ["Generative AI", "RAG Pipeline", "LLM Orchestration"],
+    image: chatbotImage,
+    link: "https://github.com/kevinp972/msba-chat-bot",
+    backgroundColor: "bg-[#4D4D4D]", 
+    zoom: 0.8
+  },
+  {
+    title: "Multi-Output CNN for Urban Traffic Analysis",
+    categories: ["Computer Vision", "Ensemble Learning", "AWS & MLOps"],
+    image: trafficImage,
+    link: "https://github.com/kevinp972/vehicle-signal-detection",
+    zoom: 1
   },
   {
     title: "Modeling Wealth with the 1991 SIPP Dataset",
@@ -52,12 +61,12 @@ export const projects: readonly Project[] = [
     zoom: 1
   },
   {
-    title: "British Airways Performance Tracker",
-    categories: ["Tableau Dashboard", "Customer Experience Analytics"],
-    image: airplaneImage,
-    link: "https://public.tableau.com/views/BritishAirwaysDashboard_17504012958430/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-    backgroundColor: "bg-[#C0C2EC]",
-    zoom: 0.7
+    title: "Optimizing Credit Score Cutoffs with RDD",
+    categories: ["Causal Inference", "Behavioral Modeling", "Data-Driven Policy Design"],
+    image: creditImage,
+    link: "https://github.com/kevinp972/rdd-credit-limit",
+    backgroundColor: "bg-[black]",
+    zoom: 1.1 
   },
   {
     title: "My Work at Center for Impact",
@@ -68,11 +77,12 @@ export const projects: readonly Project[] = [
     zoom: 0.7
   },
   {
-    title: "Source Code for This Website",
-    categories: ["Front-End Developing", "Responsive Design"],
-    image: mycribImage,
-    link: "https://github.com/kevinp972/mycrib",
-    backgroundColor: "bg-[#9B9B9B]"
+    title: "British Airways Performance Tracker",
+    categories: ["Tableau Dashboard", "Customer Experience Analytics"],
+    image: airplaneImage,
+    link: "https://public.tableau.com/views/BritishAirwaysDashboard_17504012958430/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+    backgroundColor: "bg-[#C0C2EC]",
+    zoom: 0.7
   },
   {
     title: "Clutch Replacement on My Friend's Mustang GT 2017",
@@ -81,5 +91,13 @@ export const projects: readonly Project[] = [
     link: "/projects/clutch",
     backgroundColor: "bg-[#ECEAC0]",
     zoom: 0.7
+  },
+  {
+    title: "Source Code for This Website",
+    categories: ["Front-End Developing", "Responsive Design"],
+    image: mycribImage,
+    link: "https://github.com/kevinp972/mycrib",
+    backgroundColor: "bg-[#9B9B9B]"
   }
+
 ] as const; 

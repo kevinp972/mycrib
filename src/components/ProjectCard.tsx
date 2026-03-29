@@ -5,6 +5,7 @@ import { type Project } from '@/lib/projectsData';
 
 export default function ProjectCard({ title, categories, image, link, backgroundColor, zoom = 1 }: Project) {
   const isInternalLink = link.startsWith('/');
+  const isFullBleed = !backgroundColor;
 
   const cardContent = (
     <>
@@ -13,7 +14,7 @@ export default function ProjectCard({ title, categories, image, link, background
         {/* Card container with fixed aspect ratio */}
         <div className="relative w-full aspect-[4/3] overflow-hidden">
           {/* Background container - doesn't transform */}
-          <div className={`absolute inset-0 ${backgroundColor}`} />
+          {!isFullBleed && <div className={`absolute inset-0 ${backgroundColor}`} />}
 
           {/* Image container - transforms on hover */}
           <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105 group-active:scale-105 object-cover">
@@ -21,7 +22,7 @@ export default function ProjectCard({ title, categories, image, link, background
               <Image
                 src={image}
                 alt={title}
-                className="object-contain"
+                className={isFullBleed ? 'object-cover' : 'object-contain'}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
