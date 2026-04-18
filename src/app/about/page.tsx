@@ -67,40 +67,34 @@ export default function AboutPage() {
             {/* Right column with skills content (2/3) */}
             <div className="space-y-4 text-lg md:text-xl font-light md:col-span-2">
               <div>
-                <h3 className="font-medium">Programming & Tools</h3>
+                <h3 className="font-medium">Languages & Core Tools</h3>
                 <p>Python (NumPy, pandas, scikit-learn, Dash) · R · SQL · Gurobi</p>
-                <p>Jupyter Notebooks · Git · Tableau · Power BI · Advanced Excel</p>
+                <p>Git · GitHub Copilot · Tableau · Power BI · MLFlow</p>
               </div>
 
               <div>
-                <h3 className="font-medium">Statistical & Machine Learning Methods</h3>
-                <p>Linear & Logistic Regression · Classification · Clustering · Ensemble Methods</p>
-                <p>Feature Engineering · Regularization (L1, L2) · Wrapper Methods</p>
+                <h3 className="font-medium">Data Engineering & Architecture</h3>
+                <p>Snowflake · Apache Airflow · ETL/ELT Workflows · Incremental Loading · Medallion Architecture · Relational Data Modeling · Stored Procedures · Microsoft Graph API</p>
               </div>
 
               <div>
-                <h3 className="font-medium">Causal Inference & Experimental Design</h3>
-                <p>A/B Testing · Difference-in-Differences (DiD) · Regression Discontinuity (RDD) · Instrumental Variables (IV) · Panel Data Analysis</p>
+                <h3 className="font-medium">Generative AI & Agentic Systems</h3>
+                <p>Retrieval-Augmented Generation (RAG) · Agentic Orchestration · Multi-Agent Tooling · n8n Workflow Orchestration · Vector Database Management (pgvector, Supabase) · Chat Memory & Session Management · OpenAI & Anthropic APIs · Prompt Engineering · Automated Document Extraction</p>
               </div>
 
               <div>
-                <h3 className="font-medium">AI & Automation Workflows</h3>
-                <p>OpenAI APIs (File Search, Thread) · Prompt Engineering · JSON Parsing · PDF Extraction · Concurrent Processing · Python Automation</p>
-              </div>
-
-              <div>
-                <h3 className="font-medium">Data Science Foundations</h3>
-                <p>Statistics · Machine Learning · Causal Inference · Optimization · Data Management · Data Visualization</p>
-              </div>
-
-              <div>
-                <h3 className="font-medium">Applied Analytics</h3>
-                <p>Customer Analytics · Operations Analytics · Competitive Analytics</p>
+                <h3 className="font-medium">Machine Learning & Deep Learning</h3>
+                <p>CNNs · RNNs · LSTMs · GRUs · Autoencoders · GANs · Transfer Learning · Ensemble Methods · Classification · Clustering · Feature Engineering · Regularization (L1, L2) · Wrapper Methods</p>
               </div>
 
               <div>
                 <h3 className="font-medium">Time Series & Forecasting</h3>
-                <p>ARIMA · SARIMA · Exponential Smoothing · STL Decomposition · VAR · VECM · Forecasting & Backtesting · Time Series Feature Engineering · Cross-Correlation</p>
+                <p>Amazon Chronos · Prophet · Deep Learning Forecasting · ARIMA · SARIMA · VAR · VECM · STL Decomposition · Advanced Backtesting · Time Series Feature Engineering · Cross-Correlation</p>
+              </div>
+
+              <div>
+                <h3 className="font-medium">Causal Inference & Optimization</h3>
+                <p>Difference-in-Differences (DiD) · Regression Discontinuity (RDD) · Instrumental Variables (IV) · Panel Data Analysis · A/B Testing · Gurobi Optimization · Linear Programming</p>
               </div>
             </div>
           </div>
