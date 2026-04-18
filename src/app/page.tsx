@@ -21,17 +21,20 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-start gap-8">
             <div className="max-w-2xl">
+              <p className="text-xl">
+                Howdy, I&apos;m Xueshan (Kevin) Peng, a data scientist with 2+ years of experience.
+              </p>
               <p className="text-xl mb-12">
-                Hi, I&apos;m Xueshan (Kevin) Peng, a data scientist with 2+ years of experience. I will graduate in December 2025 and am currently seeking full-time opportunities.
+                Welcome to my website. (:
               </p>
 
               <div className="flex flex-col min-[550px]:flex-row gap-8 mb-12 pt-10">
                 <div className="flex-1">
                   <h2 className="text-2xl font-medium mb-2">Currently</h2>
                   <p className="text-lg font-extralight">
-                    <a href="https://www.anderson.ucla.edu/degrees/master-of-science-in-business-analytics-msba" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">UCLA MSBA</a> Candidate
+                    <a href="https://www.anderson.ucla.edu/degrees/master-of-science-in-business-analytics-msba" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">UCLA MSBA</a> Graduate
                     <br />
-                    DS Intern @ <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Center for Impact</a>
+                    DS, Risk Management @ <a href="https://www.ozk.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Bank OZK</a>
                   </p>
                 </div>
                 <div className="flex-1">

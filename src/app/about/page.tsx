@@ -26,7 +26,7 @@ export default function AboutPage() {
 
               <p>I&apos;m Kevin. I&apos;m passionate about building elegant analytics solutions to help organizations solve complex business problems with clarity and impact.</p>
 
-              <p>I&apos;m currently working on ESG data analytics at <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Center for Impact</a>, building custom LLM pipelines and dashboards  to support research and sustainability strategy development.</p>
+              <p>I&apos;m currently engineering robust data pipelines and delivering analytical solutions that empower executive decision-making at <a href="https://www.ozk.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">Bank OZK</a>.</p>
 
               <p>My approach to analytics is pragmatic – choosing the <strong className="font-medium">most effective</strong>, and often the simplest, method that <strong className="font-medium">solves the problem</strong> and <strong className="font-medium">speaks to the demand of cross-functional teams</strong>.</p>
 
@@ -78,6 +78,11 @@ export default function AboutPage() {
               </div>
 
               <div>
+                <h3 className="font-medium">Causal Inference & Optimization</h3>
+                <p>Difference-in-Differences (DiD) · Regression Discontinuity (RDD) · Instrumental Variables (IV) · Panel Data Analysis · A/B Testing · Gurobi Optimization · Linear Programming</p>
+              </div>
+
+              <div>
                 <h3 className="font-medium">Generative AI & Agentic Systems</h3>
                 <p>Retrieval-Augmented Generation (RAG) · Agentic Orchestration · Multi-Agent Tooling · n8n Workflow Orchestration · Vector Database Management (pgvector, Supabase) · Chat Memory & Session Management · OpenAI & Anthropic APIs · Prompt Engineering · Automated Document Extraction</p>
               </div>
@@ -92,10 +97,6 @@ export default function AboutPage() {
                 <p>Amazon Chronos · Prophet · Deep Learning Forecasting · ARIMA · SARIMA · VAR · VECM · STL Decomposition · Advanced Backtesting · Time Series Feature Engineering · Cross-Correlation</p>
               </div>
 
-              <div>
-                <h3 className="font-medium">Causal Inference & Optimization</h3>
-                <p>Difference-in-Differences (DiD) · Regression Discontinuity (RDD) · Instrumental Variables (IV) · Panel Data Analysis · A/B Testing · Gurobi Optimization · Linear Programming</p>
-              </div>
             </div>
           </div>
         </div>
@@ -138,6 +139,12 @@ export default function AboutPage() {
 
             {/* Right column with work experience content (2/3) */}
             <div className="space-y-2 text-lg md:text-xl font-light md:col-span-2">
+              <div>
+                <a href="https://www.ozk.com" target="_blank" rel="noopener noreferrer">
+                  Data Scientist @ <span className="text-blue-600 hover:text-blue-800">Bank OZK</span>
+                </a>
+              </div>
+              
               <div>
                 <a href="https://www.anderson.ucla.edu/about/centers/impactanderson" target="_blank" rel="noopener noreferrer">
                   Data Scientist @ <span className="text-blue-600 hover:text-blue-800">UCLA Anderson Center for Impact</span>
