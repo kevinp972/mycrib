@@ -229,6 +229,7 @@ const photoMetaList: ReadonlyArray<PhotoMeta> = [
   { name: 'IMG_6111', camera: 'Canon IXUS 80 IS', location: 'Hakone, Japan', alt: 'Art Installation in Hakone OAM' },
   { name: 'IMG_6156', camera: 'Canon IXUS 80 IS', location: 'San Diego, California, USA', alt: 'Mingguang Smoking' },
   { name: 'IMG_6197', camera: 'Canon IXUS 80 IS', alt: 'Gas Station & Trees' },
+  { name: 'IMG_6222', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Bonaventure Hotel' },
   { name: 'IMG_6285', camera: 'Canon IXUS 80 IS', location: 'New Orleans, USA', alt: 'Poet & Typewriter' },
   { name: 'IMG_6299', camera: 'Canon IXUS 80 IS', location: 'New Orleans, USA', alt: 'Racoon' },
   { name: 'IMG_6323', camera: 'Canon IXUS 80 IS', location: 'New Orleans, USA', alt: 'Hanging Man' },
@@ -240,6 +241,12 @@ const photoMetaList: ReadonlyArray<PhotoMeta> = [
   { name: 'IMG_6388', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Melrose Market 1' },
   { name: 'IMG_6391', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Melrose Market 2' },
   { name: 'IMG_6393', camera: 'Canon IXUS 80 IS', location: 'Los Angeles, USA', alt: 'Jazz Photos' },
+  { name: 'IMG_6441_1', camera: 'Canon IXUS 80 IS', location: 'Sequoia, USA', alt: 'Onkar in water' },
+  { name: 'IMG_6470', camera: 'Canon IXUS 80 IS', location: 'Sequoia, USA', alt: 'Friends and Sunset' },
+  { name: 'IMG_6537', camera: 'Canon IXUS 80 IS', location: 'Sequoia, USA', alt: 'Lake and Ducks' },
+  { name: 'IMG_6547', camera: 'Canon IXUS 80 IS', location: 'Santa Barbara, USA', alt: 'Roots' },
+  { name: 'IMG_6618_4', camera: 'Canon IXUS 80 IS', location: 'Channel Islands, USA', alt: 'Dolphin' },
+  { name: 'IMG_6669', camera: 'Canon IXUS 80 IS', location: 'Channel Islands, USA', alt: 'Crow' },
 ];
 
 export const photos: ReadonlyArray<Photo> = photoMetaList.reduce<Photo[]>((acc, meta) => {
