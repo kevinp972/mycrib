@@ -68,7 +68,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-lg md:text-xl font-light md:col-span-2">
               <div>
                 <h3 className="font-medium">Languages & Core Tools</h3>
-                <p>Python (NumPy, pandas, scikit-learn, Dash) · R · SQL · Gurobi</p>
+                <p>Python (NumPy, pandas, scikit-learn, Dash, Streamlit) · R · SQL · Gurobi</p>
                 <p>Git · GitHub Copilot · Tableau · Power BI · MLFlow</p>
               </div>
 
