@@ -84,7 +84,7 @@ export default function AboutPage() {
 
               <div>
                 <h3 className="font-medium">Generative AI & Agentic Systems</h3>
-                <p>Retrieval-Augmented Generation (RAG) · Agentic Orchestration · Multi-Agent Tooling · n8n Workflow Orchestration · Vector Database Management (pgvector, Supabase) · Chat Memory & Session Management · OpenAI & Anthropic APIs · Prompt Engineering · Automated Document Extraction</p>
+                <p>Retrieval-Augmented Generation (RAG) · n8n Workflow Orchestration · Vector Database Management (pgvector, Supabase) · Chat Memory & Session Management · OpenAI & Anthropic APIs · Prompt Engineering · Automated Document Extraction</p>
               </div>
 
               <div>
