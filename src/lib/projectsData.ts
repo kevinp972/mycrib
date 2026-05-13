@@ -4,12 +4,13 @@ import trafficImage from '@/assets/images/projects/objectdetection.jpg';
 import lyftImage from '@/assets/images/projects/lyft.png';
 import etlImage from '@/assets/images/projects/etl-code-snippet.png';
 import creditImage from '@/assets/images/projects/credit-cards.png';
-
 import sippImage from '@/assets/images/projects/wealthgap.png';
 import airplaneImage from '@/assets/images/projects/britsair.png';
 import ofgImage from '@/assets/images/projects/ofg.png';
 import mycribImage from '@/assets/images/projects/mycrib.png';
 import clutchImage from '@/assets/images/projects/clutch.png';
+import fraudImage from '@/assets/images/projects/fraud.png';
+import bananaImage from '@/assets/images/projects/warhol_banana.png';
 
 export interface Project {
   title: string;
@@ -30,12 +31,35 @@ export const projects: readonly Project[] = [
     zoom: 0.9 
   },
   {
+    title: "Real-Time Fraud Detection",
+    categories: ["Fraud Detection", "Machine Learning", "Imbalanced Classification"],
+    image: fraudImage,
+    link: "https://github.com/kevinp972/fraud-detection-model",
+    backgroundColor: "bg-[#1c1f26]",
+    zoom: 0.9
+  },
+  {
     title: "Automated ETL for Yelp Analytics",
     categories: ["End-to-End Pipeline", "Data Engineering"],
     image: etlImage,
     link: "https://github.com/kevinp972/yelp-etl-pipeline-to-tableau",
     backgroundColor: "bg-[#9B9B9B]",
     zoom: 0.9 
+  },
+  {
+    title: "Fashion Supply Chain Network Optimization",
+    categories: ["Linear Programming", "Optimization", "Gurobi"],
+    image: bananaImage,
+    link: "https://github.com/kevinp972/supply-chain-optimization",
+    backgroundColor: "bg-[#c0c2ec]",
+    zoom: 0.9
+  },
+  {
+    title: "Multi-Output CNN for Urban Traffic Analysis",
+    categories: ["Computer Vision", "Ensemble Learning", "AWS & MLOps"],
+    image: trafficImage,
+    link: "https://github.com/kevinp972/vehicle-signal-detection",
+    zoom: 1
   },
   {
     title: "RAG-Powered AI Agent for UCLA MSBA",
@@ -46,11 +70,12 @@ export const projects: readonly Project[] = [
     zoom: 0.8
   },
   {
-    title: "Multi-Output CNN for Urban Traffic Analysis",
-    categories: ["Computer Vision", "Ensemble Learning", "AWS & MLOps"],
-    image: trafficImage,
-    link: "https://github.com/kevinp972/vehicle-signal-detection",
-    zoom: 1
+    title: "Optimizing Credit Score Cutoffs with RDD",
+    categories: ["Causal Inference", "Behavioral Modeling", "Data-Driven Policy Design"],
+    image: creditImage,
+    link: "https://github.com/kevinp972/rdd-credit-limit",
+    backgroundColor: "bg-[black]",
+    zoom: 1.1 
   },
   {
     title: "Modeling Wealth with the 1991 SIPP Dataset",
@@ -61,12 +86,12 @@ export const projects: readonly Project[] = [
     zoom: 1
   },
   {
-    title: "Optimizing Credit Score Cutoffs with RDD",
-    categories: ["Causal Inference", "Behavioral Modeling", "Data-Driven Policy Design"],
-    image: creditImage,
-    link: "https://github.com/kevinp972/rdd-credit-limit",
-    backgroundColor: "bg-[black]",
-    zoom: 1.1 
+    title: "British Airways Performance Tracker",
+    categories: ["Tableau Dashboard", "Customer Experience Analytics"],
+    image: airplaneImage,
+    link: "https://public.tableau.com/views/BritishAirwaysDashboard_17504012958430/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+    backgroundColor: "bg-[#C0C2EC]",
+    zoom: 0.7
   },
   {
     title: "My Work at Center for Impact",
@@ -77,12 +102,11 @@ export const projects: readonly Project[] = [
     zoom: 0.7
   },
   {
-    title: "British Airways Performance Tracker",
-    categories: ["Tableau Dashboard", "Customer Experience Analytics"],
-    image: airplaneImage,
-    link: "https://public.tableau.com/views/BritishAirwaysDashboard_17504012958430/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-    backgroundColor: "bg-[#C0C2EC]",
-    zoom: 0.7
+    title: "Source Code for This Website",
+    categories: ["Front-End Developing", "Responsive Design"],
+    image: mycribImage,
+    link: "https://github.com/kevinp972/mycrib",
+    backgroundColor: "bg-[#9B9B9B]"
   },
   {
     title: "Clutch Replacement on My Friend's Mustang GT 2017",
@@ -92,12 +116,5 @@ export const projects: readonly Project[] = [
     backgroundColor: "bg-[#ECEAC0]",
     zoom: 0.7
   },
-  {
-    title: "Source Code for This Website",
-    categories: ["Front-End Developing", "Responsive Design"],
-    image: mycribImage,
-    link: "https://github.com/kevinp972/mycrib",
-    backgroundColor: "bg-[#9B9B9B]"
-  }
 
 ] as const; 
